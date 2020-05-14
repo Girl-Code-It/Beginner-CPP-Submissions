@@ -38,7 +38,7 @@ $ git push                   #from second push onwards
 ```
 
 > Think you're ready :grey_question: Make the PR :tropical_drink:
-# open your forked repository
-# Click on Create New Pull Request
-# Give a message in the comment box about the PR
-# Hurrah!! Your first PR made! Wait for your submission to be accepted and your PR to be merged
+-  open your forked repository
+- Click on Create New Pull Request
+- Give a message in the comment box about the PR
+- Hurrah!! Your first PR made! Wait for your submission to be accepted and your PR to be merged

@@ -1,0 +1,69 @@
+/*
+// Sample code to perform I/O:
+
+#include <iostream>
+
+using namespace std;
+
+int main() {
+	int num;
+	cin >> num;										// Reading input from STDIN
+	cout << "Input number is " << num << endl;		// Writing output to STDOUT
+}
+
+// Warning: Printing unwanted or ill-formatted data to output will cause the test cases to fail
+*/
+
+// Write your code here
+#include <iostream>
+using namespace std;
+#define MAX 32
+bool xsymmetric(int n,char c[MAX][MAX]){
+int l=0;
+int r=n-1;
+int i;
+while(l<r){
+for(i=0;i<n;i++){
+if(c[l][i]!=c[r][i])
+return false;
+}
+l++;
+r--;
+}
+return true;
+}
+bool ysymmetric(int n,char c[MAX][MAX]){
+int l=0;
+int r=n-1;
+int i;
+while(l<r){
+for(i=0;i<n;i++){
+if(c[i][l]!=c[i][r])
+return false;
+}
+l++;
+r--;
+}
+return true;
+}
+int main()
+{
+int tc;
+cin>>tc;
+while(tc--)
+{
+int n;
+cin>>n;
+char c[MAX][MAX];
+int i,j;
+for(i=0;i<n;i++){
+for(j=0;j<n;j++)
+cin>>c[i][j];
+}
+if(xsymmetric(n,c)&&ysymmetric(n,c))
+cout<<"YES\n";
+else
+cout<<"NO\n";
+}
+return 0;
+}

@@ -1,0 +1,51 @@
+#include <bits/stdc++.h>
+#define ll long long
+using namespace std;
+
+
+int main()
+{
+int n,m;
+cin >> n >> m;
+
+ll a[n][m];
+for(int i=0; i<n; i++)
+for(int j=0; j<m; j++)
+cin >> a[i][j];
+
+int v1, v2, v3, v4;
+cin >> v1 >> v2 >> v3 >> v4;
+
+ll mat_sum = 0, mat_sum_1 = 0;
+for(int i=0; i<n; i++)
+{
+ll sum_row=0, sum_row_v=0, sum_v = 0;
+for(int j=0; j<m; j++)
+{
+sum_row += abs(a[i][j]);
+sum_row_v += abs(a[i][j]+v1);
+sum_v += abs(v2);
+}
+mat_sum += max(max(sum_row, sum_row_v), sum_v);
+}
+
+for(int i=0; i<m; i++)
+{
+ll sum_col=0, sum_col_v=0, sum_v=0;
+for(int j=0; j<n; j++)
+{
+sum_col += abs(a[j][i]);
+sum_col_v += abs(a[j][i]+v3);
+sum_v += abs(v4);
+}
+mat_sum_1 += max(max(sum_col, sum_col_v), sum_v);
+}
+
+cout << max(mat_sum, mat_sum_1) << endl;
+return 0;
+
+}
+// Warning: Printing unwanted or ill-formatted data to output will cause the test cases to fail
+
+
+// Write your code here

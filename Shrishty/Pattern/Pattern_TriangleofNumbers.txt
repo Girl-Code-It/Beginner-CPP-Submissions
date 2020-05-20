@@ -1,0 +1,31 @@
+ #include <iostream>
+using namespace std;
+
+int main() {
+    int i,j,n;
+    cin>>n;
+    int a[n];
+    for (i=n;i>0;i--)
+    {
+        for (j=i*2-2;j>0;j--)
+        {
+            cout<<" ";
+        }
+         int p=n-i+1;
+        for (int k=n;k>=i;k--)
+        {
+            cout<<p;
+            p++;
+        }
+        
+        for (int m=n; m>i; m--)
+        {
+            cout<<a[i+1]--;
+        }
+        cout<<endl;
+        a[i]=p;
+        
+    }
+    
+    
+}

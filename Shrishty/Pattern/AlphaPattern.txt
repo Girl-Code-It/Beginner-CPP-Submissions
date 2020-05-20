@@ -1,0 +1,24 @@
+	#include <iostream>
+using namespace std;
+
+
+int main()
+{    
+   int N;
+    cin>>N;
+    int i,j;
+    char c = 'A';
+    
+    for (i=1;i<=N;i++)
+    {
+      
+        for (j=0;j<i;j++)
+        {
+            cout<<c;
+        }
+        c++;
+        cout<<endl;
+    }
+    return 0;
+}
+

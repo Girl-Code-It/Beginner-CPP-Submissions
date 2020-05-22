@@ -11,7 +11,7 @@ int main()
         ld=num%10;
         rev=rev*10+ld;
         num=num/10;
-        if(ld==0)               //for counting total no. of zeros.
+        if(ld==0)               
         {
             ct++;
         }

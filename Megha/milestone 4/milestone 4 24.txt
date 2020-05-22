@@ -1,0 +1,14 @@
+#include <iostream>
+using namespace std;
+int main() {
+int n,m,min, hcf=1;
+cin>>n>>m;
+min=(n>m)?n:m;
+for(int i=1;i<=min;i++){
+    if((n%i==0)&&(m%i==0)) {
+            hcf = i;
+        }
+}
+cout<<hcf;
+return 0;
+}

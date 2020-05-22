@@ -1,0 +1,17 @@
+#include <iostream>
+using namespace std;
+int main() {
+    int a,b;
+    int sum;
+    cin>>a;
+    cin>>b;
+    sum=(a+b);
+    if (sum%2==0){
+        cout<<"sum is EVEN"<<endl;
+    }
+    else{
+        cout<<"sum is ODD"<<endl;
+    }
+    cout<<"sum is "<<sum<<endl;
+    cout<<"Hello World!";
+}

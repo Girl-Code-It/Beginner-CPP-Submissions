@@ -1,0 +1,18 @@
+#include <iostream>
+#include<bits/stdc++.h>
+using namespace std;
+int maxAmount(int*arr,int begin,int end,int year){
+if(begin>end){
+    return 0;
+}
+int incStart=arr[begin]*year+maxAmount(arr,begin+1,end,year+1);
+int incEnd=arr[end]*year+maxAmount(arr,begin,end-1,year+1);
+int ans=max(incStart,incEnd);
+return ans;
+}
+int main() {
+int n=5;
+int arr[5]={2,3,5,1,4};
+cout<<maxAmount(arr,0,n-1,1)<<endl;
+return 0;
+}

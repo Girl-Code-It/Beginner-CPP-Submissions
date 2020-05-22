@@ -1,0 +1,16 @@
+#include <iostream>
+using namespace std;
+int main() {
+    int n,target;
+    cin>>n>>target;
+    int count = 0;
+    while(n){
+    int i=n%10;
+    if(i==target){
+        count++;
+    }
+    n=n/10;
+    }
+    cout<<count;
+     return 0;
+}

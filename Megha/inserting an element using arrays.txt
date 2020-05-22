@@ -1,0 +1,20 @@
+#include <iostream>
+#define MAX_SIZE 1000
+using namespace std;
+int main() {
+    int arr[MAX_SIZE];
+    int i,N,sum=0,pos,num;
+    cin>>N>>pos>>num;
+    for(i=0;i<N;i++){
+        cin>>arr[i];
+    }
+    for(i=N;i>=pos;i--){
+        arr[i]=arr[i-1];
+    }
+    arr[pos-1]=num;
+    N++;
+    for(i=0;i<N;i++){
+        cout<<arr[i]<<",";
+    }
+    return 0;
+}

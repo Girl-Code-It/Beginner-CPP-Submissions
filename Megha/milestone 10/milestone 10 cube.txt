@@ -1,0 +1,9 @@
+#include <iostream>
+using namespace std;
+int cube(int a){
+    return(a*a*a);
+}
+int main() {
+    cout<<cube(4);
+   return 0;
+}

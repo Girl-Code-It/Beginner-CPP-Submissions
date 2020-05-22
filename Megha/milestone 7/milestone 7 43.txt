@@ -1,0 +1,20 @@
+#include <iostream>
+#include <math.h>
+using namespace std;
+int main() {
+   long long octal,tempOctal,decimal,place;
+    int digit;
+    cin>>octal;
+    place=0;
+    decimal=0;
+    tempOctal=octal;
+    while(tempOctal>0){
+    digit=tempOctal%10;
+    decimal=(pow(8,place)*digit)+decimal;
+    tempOctal/=10;
+    place++;
+    }
+    cout<<octal<<endl;
+    cout<<decimal;
+  return 0;
+}

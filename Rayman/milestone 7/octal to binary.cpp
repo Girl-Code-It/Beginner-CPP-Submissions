@@ -1,20 +1,4 @@
-/*
- *Binary Number System:
- *Binary number system is a base 2 number system.
- *Binary number system uses only 2 symbols to represent all its numbers i.e. 0 and 1.
- *Octal Number System:
- *Octal number system is a base 8 number system.
- *Octal number system uses 8 symbols to represent all its numbers i.e. 0 1 2 3 4 5 6 7.
- Binary	Octal
- 000 	0
- 001 	1
- 010 	2
- 011	3
- 100 	4
- 101 	5
- 110 	6
- 111 	7
- */
+
  #include<iostream>
  using namespace std;
  int main()

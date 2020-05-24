@@ -1,0 +1,20 @@
+#include <iostream>
+using namespace std;
+int main() {
+    int OCTALconst[]={0,1,10,11,100,101,110,111};
+    long long octal,tempOctal,binary,place;
+    int digit;
+    cin>>octal;
+    place=1;
+    binary=0;
+    tempOctal=octal;
+    while(tempOctal>0){
+        digit=tempOctal%10;
+    binary=(OCTALconst[digit]*place)+binary;
+    tempOctal/=10;
+    place*=1000;
+    }
+    cout<<octal<<endl;
+    cout<<binary;
+  return 0;
+}

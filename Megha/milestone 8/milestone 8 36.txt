@@ -1,0 +1,27 @@
+#include <iostream>
+using namespace std;
+int main() {
+   int k=0,m;
+for(int i=1;i<=5;i++){
+    
+       for(int j=0;j<5;j++){
+
+       if(j<i){
+       if(j==0){
+           cout<<"0  ";
+       }
+       else{ 
+           m=k*j;
+        cout<<m<<"  ";
+           }
+        }
+        else{
+        cout<<"   ";
+        }
+         }
+        k++;
+         cout<<endl;
+}
+return 0;
+}
+  

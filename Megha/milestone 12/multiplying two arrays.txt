@@ -1,0 +1,27 @@
+#include <iostream>
+using namespace std;
+int main() {
+    int i,j,k,m=1,n=3,p=3,sum;
+    int a[n][p]={{1,2,3},{4,5,6},{7,8,9} };
+    int b[p][m]={{1},{4},{7} };
+    int c[n][m];
+        for(i=0;i<n;i++){
+        for(j=0;j<m;j++){
+            sum = 0;
+            for(k=0;k<p;k++){ 
+         sum = sum + a[i][k] * b[k][j];
+          
+            }
+            c[i][j] = sum;
+        }      
+    }
+for(i=0;i<n;i++){
+        for(j=0;j<m;j++){ 
+            
+                cout<<c[i][j]<<" ";
+           
+        }
+         cout<<endl;
+}
+    return 0;
+}

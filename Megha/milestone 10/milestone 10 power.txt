@@ -1,0 +1,13 @@
+#include <iostream>
+#include<math.h>
+using namespace std;
+
+int powe(int a,int b){
+ 
+   return (round(pow(a,b)));
+   
+}
+int main() {
+   cout<<powe(5,2)<<endl;
+   return 0;
+}

@@ -1,0 +1,13 @@
+#include <iostream>
+using namespace std;
+int main() {
+int x,y;
+cin>>x>>y;
+if(x==y){
+    cout<<"square"<<endl;
+}
+else{
+    cout<<"rectangle"<<endl;
+}
+return 0;
+}

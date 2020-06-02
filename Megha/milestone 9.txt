@@ -1,0 +1,18 @@
+#include <iostream>
+using namespace std;
+int main() {
+    int x,y;
+    cin>>x>>y;
+    if(y*100/x>75){
+        cout<<"student is allowed to attend the classes"<<endl;
+    }
+    else{
+        if(y){
+            cout<<"student is allowed to attend the classes"<<endl;
+        }
+        else {
+        cout<<"student is not allowed to attend the classes"<<endl;
+    }
+    }
+   return 0;
+}

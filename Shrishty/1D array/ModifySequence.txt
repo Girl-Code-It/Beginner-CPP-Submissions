@@ -1,0 +1,47 @@
+
+#include<bits/stdc++.h>
+using namespace std;
+int main()
+{
+int n;
+cin>>n;
+long long int a[n];
+unsigned long long int sum=0;
+for(int i=0;i<n;i++)
+{
+cin>>a[i];
+}
+for(int i=0;i<n-1;i++)
+{
+int f=0;
+if(a[i]<a[i+1] && a[i]!=0 && a[i+1]!=0)
+{
+a[i+1] -=a[i];
+a[i]=0;
+f++;
+}
+else if(a[i]>a[i+1] && a[i]!=0 && a[i+1]!=0)
+{
+a[i] -=a[i+1];
+a[i+1]=0;
+f++;
+}
+else if( a[i]!=0 && a[i+1]!=0)
+{
+a[i]=0;
+a[i+1]=0;
+f++;
+}
+if(f==0)
+break;
+}
+int f=0;
+for(int i=0;i<n;i++)
+{
+if(a[i]==0)
+f++;
+}
+if(f==n)
+cout<<"YES"<<endl;
+else cout<<"NO"<<endl;
+}

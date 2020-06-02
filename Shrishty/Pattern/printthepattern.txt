@@ -1,0 +1,28 @@
+int sv=1;
+for (int i=1; i<=n; i++)
+{
+for (int j =sv; j<sv+n; j++)
+{
+cout<<j<<" ";
+}
+}
+cout<<endl;
+if (i== (n+1)/2)
+{
+if (n%2!=0)
+{
+sv=n*(n-2) +1;
+}
+else
+{
+sv = n*(n-1) +1;
+}
+else if (i>(n+1)/2)
+{
+sv = sv-2*n;
+}
+else
+{
+sv=sv+2*n;
+}
+}

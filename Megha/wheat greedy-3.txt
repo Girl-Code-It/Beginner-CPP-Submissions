@@ -1,0 +1,33 @@
+#include <iostream>
+#include<vector>
+using namespace std;
+int fractinaKnapsack(int* wt,int* val,int totalWt,int num){
+	vector<pair<double,int> >ratio;
+	for(int i=0;i<num;++i){
+	double r = (double)val[i]/wt[i];
+	ratio.push_back(make_pair(i,r));
+	}
+	sort(ratio.begin(),ratio.end());
+    for(int i=num-1;i>=0;i--){
+        cout<<ratio[i].first<<endl;
+    }
+	for(int i=num-1;i>=0&&totalWt>0;i--){
+	if(wt[ratio[i].second]<=totalWt){
+        totalwt-=wt[ratio[i].second];
+        result+=val[ratio[i].second];
+    }
+    else{
+        result+= totalwt*ratio[i].first;
+        totalWt = 0;
+    }
+	}
+    return result;
+}
+int main() {
+    int num=4;
+    int wt[4]={5,3,2,6};
+    int val[4]={10,19,12,20};
+    int totalWt=13;
+    cout<<fractionalKnapsack(wt,val,totalWt,num)<<endl;
+
+}

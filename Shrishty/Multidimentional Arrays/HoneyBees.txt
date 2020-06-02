@@ -1,0 +1,113 @@
+
+ 
+#include <iostream>
+ 
+using namespace std;
+ 
+int main() {
+	int t;
+	cin>>t;
+	while(t--)
+	{
+		int n,m;
+		cin>>n>>m;
+		int mat[n][m];
+		for(int i=0;i<n;i++) for(int j =0;j<m;j++) cin>>mat[i][j];
+		int k;
+		cin>>k;
+		int query[k][3];
+		for(int i=0;i<k;i++) for(int j=0;j<3;j++) cin>>query[i][j];
+		
+		for(int i=0;i<k;i++)
+		{
+			if(query[i][0]==1)
+			{
+				int sum=0;
+				int x= query[i][1];
+				int y= query[i][2];
+				
+				
+					if(y-1>=0)
+					sum= sum + mat[x][y-1];
+					if(x-1>=0)
+					sum = sum + mat[x-1][y];
+					if(y+1<m)
+					sum = sum + mat[x][y+1];
+					if(x+1<n)
+					sum=sum+mat[x+1][y];
+					if(y%2==1){
+						if(x+1<n && y+1<m)
+						sum = sum + mat[x+1][y+1];
+						if(x+1<n&&y-1>=0)
+					    sum=sum+mat[x+1][y-1];
+					}else{
+						if(x-1>=0 && y-1>=0) 
+						sum = sum + mat[x-1][y-1];
+						if(x-1>=0 && y+1<m)
+						sum = sum+ mat[x-1][y+1];
+ 
+					}
+					cout<<sum<<endl;
+			}
+			if(query[i][0]==2)
+			{
+				int sum=0;
+				int x= query[i][1];
+				int y= query[i][2];
+ 
+ 
+					if(x+2<n){
+						if(y%2==1)
+						{
+							if(y-1>=0) sum =  sum +mat[x+2][y-1];
+							if(y+1<m) sum=sum+ mat[x+2][y+1];
+						}
+						
+						 sum = sum+mat[x+2][y];
+					}
+					if(x-2>=0) {
+						if(y%2==0)
+						{
+							if(y+1<m) sum= sum+mat[x-2][y+1];
+							if(y-1>=0) sum = sum+ mat[x-2][y-1];
+						}
+						sum = sum+mat[x-2][y];
+					}
+					if(y+2<m)
+					{
+						sum=sum+mat[x][y+2];
+						
+						if(x-1>=0)
+						sum = sum + mat[x-1][y+2];
+						if(x+1<n)
+						sum = sum+ mat[x+1][y+2];
+						
+					}
+					if(y-2>=0)
+					{
+						if(x-1>=0) sum = sum+mat[x-1][y-2];
+						if(x+1<n) sum = sum+mat[x+1][y-2];
+						sum=sum+mat[x][y-2];
+					}
+					if(y%2==0)
+					{
+						if(x+1<n)
+						{
+							if(y-1>=0) sum = sum+mat[x+1][y-1];
+							if(y+1<m) sum = sum+mat[x+1][y+1];
+						}
+					}else
+					{
+						if(x-1>=0)
+						{
+							if(y-1>=0) sum = sum+mat[x-1][y-1];
+							if(y+1<m) sum = sum+mat[x-1][y+1];
+						}
+					}					
+ 
+					cout<<sum<<endl;
+					}
+					
+			}
+		}	
+	}

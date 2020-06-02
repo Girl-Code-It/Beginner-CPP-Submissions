@@ -1,0 +1,25 @@
+void printPatt(int n)
+{
+    int i,j;
+    for (i=n;i>=0;i--)
+    {
+        int p=n-i,q;
+        for (j=0;j<i;j++)
+        {
+            cout<<" ";
+            
+        }
+        for (int k=0;k<=n-i;k++)
+        {
+            cout<<p;
+            p--;
+        }
+        q=1;
+        for (int t=0;t<n-i;t++)
+        {
+            cout<<q;
+            q++;
+        }
+        cout<<endl;
+    }
+}

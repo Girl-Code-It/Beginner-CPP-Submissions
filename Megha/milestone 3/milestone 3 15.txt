@@ -1,0 +1,14 @@
+#include <iostream>
+using namespace std;
+int main() {
+    int n,prod=1;
+    cin>>n;
+     
+    while(n){
+    prod*=n%10;
+    n=n/10;
+    
+    }
+     cout<<prod;
+    return 0;
+}

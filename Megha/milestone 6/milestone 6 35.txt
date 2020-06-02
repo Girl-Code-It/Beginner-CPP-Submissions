@@ -1,0 +1,21 @@
+#include <iostream>
+using namespace std;
+int main() {
+  int end,num,i,j,lastdigit,fact=1,sum=0;
+  cin>>end;
+  for(j=1;j<=end;j++){
+ num=j;
+  while(num!=0){
+      lastdigit=num%10;
+    for(i=1;i<=lastdigit;i++){
+        fact=fact*i;
+    }
+    sum+=fact;
+    num/=10;
+}
+if(sum==j){
+     cout<<j;
+ }
+  }
+return 0;
+}

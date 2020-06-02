@@ -1,0 +1,21 @@
+#include <iostream>
+using namespace std;
+int main()
+{
+    long long binary, decimal, tempBinary;
+    int remainder, place, i;
+    cin>>binary;
+    decimal = 0;
+    place= 1;
+    cout<<"Enter any binary number: "<<binary<<endl;
+    tempBinary = binary;
+    while(tempBinary != 0)
+    {
+        remainder = tempBinary % 10;
+      decimal = remainder*place + decimal;
+    place = place*2;
+    tempBinary = tempBinary/10;
+            }
+    cout<<decimal;
+   return 0;
+}

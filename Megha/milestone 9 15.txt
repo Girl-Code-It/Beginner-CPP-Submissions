@@ -1,0 +1,25 @@
+#include<iostream>
+using namespace std;
+int main()
+{
+    int n,k;
+    cin>>n;
+    int i, j;
+    for(i=n; i>=1; i--)
+    {
+        k=i;
+        for(j=1; j<=n; j++)
+        {
+           if(k<n){
+               cout<<k<<" ";
+               k++;
+           }
+           else{
+                cout<<n<<" ";
+           }
+          
+        }
+        cout<<endl;
+    }
+    return 0;
+}

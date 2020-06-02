@@ -1,0 +1,49 @@
+#include <iostream>
+using namespace std;
+int main() {
+    int i,j,m,n,sum=0;
+    cin>>m>>n;
+    int a[m][n]={{1,0},{0,0} };
+    bool row[m];
+    bool col[n];
+    
+    /* initialize all value of rows */
+    for(i=0;i<m;i++){
+      row[i]=0;
+    }
+
+    /* initialize all value of rows */
+    for(j=0;j<n;j++){
+      col[j]=0;
+    }
+
+    //store the rows and columns to be marked as
+    // 1 in rows[] and col[] arrays respectively
+        for(i=0;i<m;i++){
+        for(j=0;j<n;j++){
+         if(a[i][j]==1){
+             row[i]=1;
+             col[j]=1;
+         }
+        }
+             
+    }
+        for(i=0;i<m;i++){
+        for(j=0;j<n;j++){
+         if( row[i]==1 || col[j]==1){
+             a[i][j] = 1;
+         }
+        }
+         
+    }
+
+    for(i=0;i<m;i++){
+        for(j=0;j<n;j++){
+         
+             cout<<a[i][j] ;
+         
+        }
+        cout<<endl;      
+    }
+    return 0;
+}

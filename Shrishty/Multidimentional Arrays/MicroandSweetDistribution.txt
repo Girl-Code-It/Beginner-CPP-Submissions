@@ -1,0 +1,66 @@
+#include<bits/stdc++.h>
+using namespace std;
+
+int main() {
+int t,n,m,sx,sy,x,y;
+cin>>t;
+while(t--)
+{
+cin>>n>>m;
+cin>>sx>>sy;
+cin>>x>>y;
+if(sx==1 && sy==1)
+{
+if((x-1)%2==0 && y!=m)
+cout<<"Right"<<endl;
+else if((x-1)%2==0 && y==m && x!=n)
+cout<<"Back"<<endl;
+else if((x-1)%2!=0 && y!=1)
+cout<<"Left"<<endl;
+else if((x-1)%2!=0 && y==1 && x!=n)
+cout<<"Back"<<endl;
+else
+cout<<"Over"<<endl;
+}
+else if(sx==1 && sy==m)
+{
+if((x-1)%2==0 && y!=1)
+cout<<"Left"<<endl;
+else if((x-1)%2==0 && y==1 && x!=n)
+cout<<"Back"<<endl;
+else if((x-1)%2!=0 && y!=m)
+cout<<"Right"<<endl;
+else if((x-1)%2!=0 && y==m && x!=n)
+cout<<"Back"<<endl;
+else
+cout<<"Over"<<endl;
+}
+else if(sx==n && sy==1)
+{
+if((n-x)%2==0 && y!=m)
+cout<<"Right"<<endl;
+else if((n-x)%2==0 && y==m && x!=1)
+cout<<"Front"<<endl;
+else if((n-x)%2!=0 && y!=1)
+cout<<"Left"<<endl;
+else if((n-x)%2!=0 && y==1 && x!=1)
+cout<<"Front"<<endl;
+else
+cout<<"Over"<<endl;
+}
+else if(sx==n && sy==m)
+{
+if((n-x)%2==0 && y!=1)
+cout<<"Left"<<endl;
+else if((n-x)%2==0 && y==1 && x!=1)
+cout<<"Front"<<endl;
+else if((n-x)%2!=0 && y!=m)
+cout<<"Right"<<endl;
+else if((n-x)%2!=0 && y==m && x!=1)
+cout<<"Front"<<endl;
+else
+cout<<"Over"<<endl;
+}
+}
+return 0;
+}

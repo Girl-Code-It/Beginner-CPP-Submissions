@@ -1,0 +1,14 @@
+#include <iostream>
+using namespace std;
+void vote (int x){ 
+if(x>18){
+    cout<<"able to vote";
+}
+else{
+    cout<<"not able to vote";
+}
+}
+int main() {
+vote(17);
+   return 0;
+}

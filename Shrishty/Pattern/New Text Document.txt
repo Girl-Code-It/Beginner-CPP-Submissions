@@ -1,0 +1,25 @@
+void printPatt(int n)
+{
+ int i,j,k,l;
+    char c;
+    for (i=0;i<n;i++)
+    {
+        for (j=0; j<i; j++)
+        {
+            cout<<" ";
+        }
+        c='A';
+        for (k=0;k<n-i;k++)
+        {
+            cout<<c;
+            c++;
+        }
+        for (l=0;l<n-i;l++)
+        {
+            c--;
+            cout<<c;
+      
+        }
+        cout<<endl;
+    }
+}

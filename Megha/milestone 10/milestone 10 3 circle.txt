@@ -1,0 +1,13 @@
+#include <iostream>
+using namespace std;
+float area (float r){
+return((3.14)*r*r);
+}
+float circum (float r){
+return((3.14)*r*2);
+}
+int main() {
+   cout<<area(7)<<endl;
+   cout<<circum(7);
+   return 0;
+}

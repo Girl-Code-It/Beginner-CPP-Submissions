@@ -1,0 +1,65 @@
+#include <iostream>
+using namespace std;
+int isprime(int n);
+int isArmstrong(int n);
+int isperfect(int n);
+int main() {
+    int n;
+    cin>>n;
+    if(isprime(n)){
+cout<<n<<" is prime no."<<endl;
+    }
+    else{
+        cout<<n<<" is not prime no."<<endl;
+    }
+    if(isArmstrong(n)){
+cout<<n<<" is armstrong no."<<endl;
+    }
+    else{
+        cout<<n<<" is not armstrong no."<<endl;
+    }
+    if(isperfect(n)){
+cout<<n<<" is perfect no."<<endl;
+    }
+    else{
+        cout<<n<<" is not perfect no."<<endl;
+    }
+   return 0;
+}
+int isprime(int n){
+    for(int i=2;i<n;i++){
+        if(n%i==0){
+            return 0;
+        }
+        else{
+            return 1;
+        }
+    }
+}
+int isArmstrong(int n){
+    int d,arm=0,originaln;
+    originaln=n;
+        while(n){
+        d=n%10;
+        arm=arm+d*d*d;
+        n=n/10;
+    }
+    return (originaln==arm);
+}
+int isperfect(int n) 
+{
+    int i, sum, num;
+    sum = 0;
+    num = n;
+    
+    for(i=1; i<num; i++)  
+    {  
+        /* If i is a divisor of num */  
+        if(num%i == 0)  
+        {  
+            sum += i;  
+        }  
+    }
+    
+    return (n == sum);
+}

@@ -1,0 +1,10 @@
+#include <iostream>
+using namespace std;
+int main() {
+int p;
+float r,t,si;
+cin>>p>>r>>t;
+si=(p*r*t)/100;
+ cout<<"simple  interest is"<<si;
+ return 0;
+}

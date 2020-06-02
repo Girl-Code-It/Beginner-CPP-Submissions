@@ -1,0 +1,13 @@
+#include <iostream>
+using namespace std;
+int main() {
+    int x=2,y=5,z=0;
+    cin>>x>>y>>z;
+    (x == 2)?cout<<"T":cout<<"F"<<endl;
+    (x != 5)?cout<<"T":cout<<"F"<<endl;
+    ((x != 5 )&& (y >= 5))?cout<<"T":cout<<"F"<<endl;
+    ((z != 0) || (x == 2))?cout<<"T":cout<<"F"<<endl;
+    !(y < 10)?cout<<"T":cout<<"F"<<endl;
+
+   return 0;
+}

@@ -1,0 +1,51 @@
+#include <iostream>
+using namespace std;
+int main()
+{
+int t;
+cin>>t;
+while(t--)
+{
+int i;
+int n,c=0;
+cin>>n;
+int a[n];
+for(i=0;i<n;i++)
+cin>>a[i];
+int smallest=a[0];
+for (i=0; i<n; i++)
+{
+if (a[i]<=smallest)
+smallest=a[i];
+else if (a[i]<= smallest)
+smallest=a[i];
+
+}
+
+/* for(i=0;i<n-1;i++)
+{
+for(int j=i+1;j<n-i;j++)
+{
+if(a[i]<a[j])
+{
+int t=a[i];
+a[i]=a[j];
+a[j]=t;
+
+}
+}
+}*/
+for(i=0;i<n;i++)
+{ if(smallest==a[i])
+c++;
+}
+
+if(c%2==0)
+{
+cout<<"Unlucky"<<endl;
+}
+else
+cout<<"Lucky"<<endl;
+}
+return 0;
+}

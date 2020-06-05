@@ -1,90 +1,91 @@
-#include <bits/stdc++.h>
+#include <cstdio>
+#include <cassert>
 
-using namespace std;
+const int N = 101;
 
-class Node
+char a[N][N];
+int qx[N*N], qy[N*N];
+int d[N][N];
+
+int main() 
 {
-    public:
-    int x;
-    int y;
-    int steps;
-    Node()//default constructor
-    { x=y=steps=0;}
-    Node(int inx,int iny,int insteps)//parameterized constructor
-    { x=inx; y=iny; steps=insteps;}
-};
-
-int main() {
-    /* Enter your code here. Read input from STDIN. Print output to STDOUT */  
-    int N;
-    cin >> N;
-    bool **board = new bool *[N];// dynamically allocated array for board
-    for(int i=0;i<N;i++)
-        board[i] = new bool [N];
-    
-    for(int i=0;i<N;i++)
-        for(int j=0;j<N;j++)
-        {
-            char type;
-            cin >> type;
-            if(type=='X')
-                board[i][j] = false;
-            else if(type=='.')
-                board[i][j] = true;
-        }
-    int beginx, beginy, endx, endy;
-    cin >> beginx >> beginy >> endx >> endy;
-    Node begin(beginx,beginy,0);
-    
-    int *way = new int [2*N-1];
-    for(int i=0;i<N;i++)//0,-1,-2,...,-(N-1)
-        way[i] = -i;
-    for(int i=N;i<2*N-1;i++)//1,2,...,N-1
-        way[i] = i-N+1;
-    
-    queue<Node> q;
-    q.push(begin);
-    int min = 1e7;
-    while(!q.empty())
-    {
-        Node cur = q.front();
-        q.pop();
-        
-        if(!board[cur.x][cur.y])
-            continue;
-        board[cur.x][cur.y] = false;
-        if(cur.x==endx && cur.y==endy && cur.steps<min)
-            min = cur.steps;
-        
-        for(int dir=0;dir<2;dir++) //0:vertical(x changes),1:honrizonal(y changes)
-            for(int i=1;i<2*N-1 && (dir==0?cur.x:cur.y)+way[i]<N;i++)
-            {
-                if((dir==0?cur.x:cur.y)+way[i]<0)
-                {
-                    i = N-1;
-                    continue;
-                }
-                
-                if(board[cur.x+way[dir==0?i:0]][cur.y+way[dir==1?i:0]])
-                {
-                    Node n(cur.x+way[dir==0?i:0], cur.y+way[dir==1?i:0], cur.steps+1);
-                    q.push(n);
-                }
-                else if(!board[cur.x+way[dir==0?i:0]][cur.y+way[dir==1?i:0]])
-                {
-                    if(i<N)//jump left/up
-                    {
-                        i = N-1;
-                        continue;
-                    }
-                    else if(i>=N)//jump right/down
-                        break;
-                }
-                
-            }
+  int n;
+  scanf(" %d", &n);
+  
+  for (int i = 0; i < n; i++)
+   {
+    scanf(" %s", a[i]);
+    for (int j = 0; j < n; j++) 
+	{
+      assert(a[i][j] == 'X' || a[i][j] == '.');
     }
-
-    cout << min << endl;
+  }
+  int sa, sb;
+  int ta, tb;
+  scanf(" %d %d", &sa, &sb);
+  scanf(" %d %d", &ta, &tb);
+  
+  assert(a[sa][sb] == '.');
+  assert(a[ta][tb] == '.');
+  
+  int e = 0;
+  qx[e] = sa;
+  qy[e] = sb;
+  d[sa][sb] = 1;
+  e++;
+  
+  for (int it = 0; it < e; it++) 
+  {
+    int x = qx[it];
+    int y = qy[it];
+    for (int i = y + 1; i < n; i++)
+	{
+      if (a[x][i] == 'X')
+        break;
+      if (!d[x][i]) {
+        qx[e] = x;
+        qy[e] = i;
+        e++;
+        d[x][i] = d[x][y] + 1;
+    }
+    }
     
-    return 0;
+    for (int i = y - 1; i >= 0; i--) {
+     if (a[x][i] == 'X')
+        break;
+      if (!d[x][i]) {
+        qx[e] = x;
+        qy[e] = i;
+        e++;
+        d[x][i] = d[x][y] + 1;
+      } 
+    }
+    
+    for (int i = x + 1; i < n; i++) {
+      if (a[i][y] == 'X')
+        break;
+      if (!d[i][y]) {
+        qx[e] = i;
+        qy[e] = y;
+        e++;
+        d[i][y] = d[x][y] + 1;
+      } 
+    }
+    
+    for (int i = x - 1; i >= 0; i--) {
+      if (a[i][y] == 'X')
+        break;
+      if (!d[i][y]) {
+        qx[e] = i;
+        qy[e] = y;
+        e++;
+        d[i][y] = d[x][y] + 1;
+      }
+    }
+  }
+  
+  assert(d[ta][tb] > 0);
+  
+  printf ("%d\n", d[ta][tb] - 1);
+  return 0;
 }

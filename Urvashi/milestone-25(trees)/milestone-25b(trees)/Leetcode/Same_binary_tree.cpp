@@ -7,7 +7,7 @@ class solution{
 		return true;
 		
 		if(!a || !b)
-		return true;
+		return false;
 		
 		return ((a->val == b->val) 
 		&& SameBinaryTree(a->left , b->left) 

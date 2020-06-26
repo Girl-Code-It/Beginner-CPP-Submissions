@@ -6,7 +6,7 @@ public:
     if(root == NULL)
         return NULL;
         
-    // if left and right descendants are having value equal to root then root is LCA.
+    //// if left and right descendants are having value equal to root then root is LCA.
     if(root -> val == p -> val || root -> val == q -> val) 
         return root;
     
@@ -20,6 +20,6 @@ public:
     else if(r)   // if root -> right has p q. find the rest in the right branch
         return r;
     else 
-        return NULL;
+        return NULL ;
     }
 };

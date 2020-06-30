@@ -13,7 +13,8 @@ public:
             return SumDigits(root->left ,num) + SumDigits(root->right , num) ;
     }
     
-    int sumNumbers(TreeNode* root) {
+    int sumNumbers(TreeNode* root) 
+    {
         return SumDigits(root ,0) ;
     }
 };

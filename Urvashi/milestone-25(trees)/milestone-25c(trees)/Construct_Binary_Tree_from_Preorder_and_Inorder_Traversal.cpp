@@ -1,7 +1,8 @@
 class Solution {
 public:
     int preIndex = 0;
-    TreeNode* buildTree(vector<int>& preorder, vector<int>& inorder) {
+    TreeNode* buildTree(vector<int>& preorder, vector<int>& inorder) 
+    {
         return Tree(preorder , inorder , 0 , inorder.size()-1);
     }
     

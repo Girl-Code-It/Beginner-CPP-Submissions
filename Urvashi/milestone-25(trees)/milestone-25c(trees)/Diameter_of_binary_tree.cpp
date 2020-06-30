@@ -20,6 +20,6 @@ public:
         int right_dia= diameterOfBinaryTree(root->right);
         
         
-        return max( left_height+right_height, max(left_dia,right_dia) );
+        return max( left_height+right_height, max(left_dia,right_dia));
     }
 };

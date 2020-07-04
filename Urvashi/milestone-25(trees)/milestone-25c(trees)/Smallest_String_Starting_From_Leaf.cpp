@@ -1,6 +1,6 @@
 class Solution {
 public:
-    string ans = "~";
+    string ans = "~"; // having maximum ascii value
     void lexi(TreeNode* root,string s)
     {
             if (!root) 

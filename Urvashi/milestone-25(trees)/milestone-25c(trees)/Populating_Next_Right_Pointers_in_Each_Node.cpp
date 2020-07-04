@@ -1,11 +1,11 @@
 class Solution {
 public:
-    Node* connect(Node* root) {
+    Node* connect(Node* root) 
+    {
         if(!root)
             return NULL;
         queue<Node*>q;
         q.push(root);
-        
         
         while(!q.empty())
         {

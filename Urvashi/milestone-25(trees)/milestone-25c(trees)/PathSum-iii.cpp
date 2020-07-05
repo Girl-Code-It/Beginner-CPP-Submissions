@@ -2,7 +2,8 @@ class Solution {
 public:
     int ans;
     
-    int pathSum(TreeNode* root, int sum) {
+    int pathSum(TreeNode* root, int sum) 
+    {
         if(root)
         {
             preorder(root,sum);
@@ -12,7 +13,8 @@ public:
         return ans;
     }
     
-    void preorder(TreeNode* root, int sum){
+    void preorder(TreeNode* root, int sum)
+    {
         if(!root)
             return;
         if(root->val==sum)

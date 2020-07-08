@@ -1,6 +1,7 @@
 class Solution {
 public:
-    vector<vector<int>> levelOrder(Node* root) {
+    vector<vector<int>> levelOrder(Node* root) 
+    {
          vector<vector<int>> ans;
          if(!root)
              return ans;

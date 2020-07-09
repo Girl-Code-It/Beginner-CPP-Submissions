@@ -5,7 +5,7 @@ using namespace std;            // sumit string is a string which contains every
                               
 int adjacent(int a, int b)
 {
-	if((a==122&&b==97)||(a==97&&b==122))   //in adjacent fxn we are checking that all the characters in the string are adjacent or not.
+	if((a == 122 && b == 97)||(a == 97 && b == 122))   //in adjacent fxn we are checking that all the characters in the string are adjacent or not.
 	return 1;                              //if adjacent then diff in ascii value will be 1 . so return 1.
 	else
 	return abs(a-b);                       //if not adjacent then return the absolute diff in their ascii values.
@@ -21,9 +21,9 @@ int main()
 	cin>>s;
 	int k=0;
 		
-	for(int i=0;s[i+1]!='\0';i++)     // traversing the whole string .
+	for(int i = 0 ; s[i+1] != '\0' ; i++)     // traversing the whole string .
 	{
-		if((adjacent(s[i],s[i+1]))!=1)  //checking characters adjacent or not.
+		if((adjacent(s[i] , s[i+1])) != 1)  //checking characters adjacent or not.
 			k=1;
         }
 		

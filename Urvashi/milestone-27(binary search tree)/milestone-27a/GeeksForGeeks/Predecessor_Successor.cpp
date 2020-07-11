@@ -1,6 +1,7 @@
 oid findPreSuc(Node* root, Node*& pre, Node*& suc, int key)
 {
     if(!root) return ;
+    
     if(root->key == key) 
     {
         if(root->left)

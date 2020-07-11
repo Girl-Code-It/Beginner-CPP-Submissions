@@ -1,6 +1,7 @@
 class Solution{
     public:
-    int maxDepth(Node* root) {
+    int maxDepth(Node* root) 
+    {
         if(!root)
             return 0 ;
         vector<Node*>v = root->children;

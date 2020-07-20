@@ -1,5 +1,5 @@
 void inorder(Node* root){
-    if (root == NULL) return;
+    if (! root) return;
     inorder(root->left);
     cout<<root->data<<" ";
     inorder(root->right);
@@ -24,17 +24,17 @@ void merge(Node *root1, Node *root2)
    
    while(!s1.empty()||!s2.empty()){
        while(cur1)
-	   {
+	{
             s1.push(cur1);
             cur1=cur1->left;
        }
        while(cur2)
-	   {
+	{
             s2.push(cur2);
             cur2=cur2->left;
        }
        if(s1.empty())
-	   {
+	{
            cur2 = s2.top();
            s2.pop();
            cout<<cur2->data<<" ";
@@ -42,7 +42,7 @@ void merge(Node *root1, Node *root2)
            cur2=NULL;
        }
        else if(s2.empty())
-	   {
+	{
            cur1 = s1.top();
            s1.pop();
            cout<<cur1->data<<" ";
@@ -51,8 +51,8 @@ void merge(Node *root1, Node *root2)
        } 
 	   else
 	   {
-           if(s1.top()->data < s2.top()->data)
-		   {
+               if(s1.top()->data < s2.top()->data)
+		{
                cur1=s1.top();
                s1.pop();
                cout<<cur1->data<<" ";

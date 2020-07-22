@@ -13,10 +13,12 @@ int FindDistinctCount(int *arr, int n,int k) {
     }
     priority_queue<pair<int,int>>p;
     map<int,int> :: iterator it ;
+    
     for(it = m.begin() ; it != m.end() ; it++)
     {
         p.push(make_pair(it->first , it->second)) ;
     }
+    
     for(int i = 0 ; i < k && !m.empty() ; i++)
     {
         pair<int,int>temp = p.top() ;

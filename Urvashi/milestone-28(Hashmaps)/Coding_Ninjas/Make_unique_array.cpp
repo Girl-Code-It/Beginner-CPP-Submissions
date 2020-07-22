@@ -5,5 +5,3 @@ int CountExtraElements(int arr[], int n) {
     
     return n - m.size() ;
 }
-
-

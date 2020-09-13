@@ -19,5 +19,5 @@ int main ()
     cout << "Enter exponent: ";
     cin >> b;
     result = power (a, b, k);
-    cout << "a = " << result;
+    cout << "result = " << result;
 }

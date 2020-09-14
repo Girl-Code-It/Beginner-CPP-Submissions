@@ -3,6 +3,7 @@
 /*
  First Refer Unbounded Knapsack Problem.(knapsack with Duplicate items)
 
+ It is basically Pure Unbounded Knapsack Problem asked in diffrent manner.
  Time Complexity - O(N), Space Complexity - O(N)
 */
 #include <iostream>

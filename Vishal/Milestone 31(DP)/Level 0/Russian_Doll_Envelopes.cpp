@@ -4,7 +4,7 @@
     First refer longest increasing subsequnces problem.
 
     Now if you want to put an envelope in another envelope so its size(area) must be smaller then another envelopes.
-    So sort the envelopes acc or their width and then find longest increasing subsequences.
+    So sort the envelopes according to their width and then find longest increasing subsequences.
 
     Time complexity - O(N^2), Space Complexity - O(N)
 */

@@ -1,0 +1,17 @@
+//  Created by Utkarsh Thakur on 04/06/20.
+//  Copyright © 2020 Utkarsh Thakur. All rights reserved.
+
+#include <iostream>
+using namespace std;
+
+int main()
+{
+    int i;
+    for(i=0; i<=255; i++)
+    {
+        cout<<"ASCII Value of character ";
+        printf("%c = ",i);
+        cout<<""<<i<<" \n";
+    }
+    return 0;
+}

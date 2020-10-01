@@ -1,0 +1,35 @@
+#include<iostream>
+#include<cstdio>
+#include<math.h>
+
+using namespace std;
+
+int main()
+{
+    //program to find all prime factors of a number
+
+    int num;
+    bool isPrime;
+
+    cout << "Enter a number to print all prime factors" << endl;
+    cin >> num;  //10
+
+    for(int i=2; i<num; i++)
+    {
+        if(num%i == 0)
+        {
+            isPrime = true;
+            for(int j=2; j<i; j++)
+            {
+                if(i%j == 0)
+                {
+                    isPrime = false;
+                    break;
+                }
+            }
+            if(isPrime == true)
+                cout<< i << " ";
+        }
+    }
+}
+

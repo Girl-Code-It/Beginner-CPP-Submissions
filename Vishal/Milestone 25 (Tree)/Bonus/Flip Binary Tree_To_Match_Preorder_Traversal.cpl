@@ -1,0 +1,26 @@
+class Solution
+{
+public:
+    int i=0;
+    bool traverse(TreeNode* root,vector<int>&voyage,vector<int>&res)
+    {
+        if(!root)
+            return true;
+
+        if(root->val != voyage[i++])
+            return false;
+
+        if(root->left && root->left->val != voyage[i])
+        {
+            res.push_back(root->val);
+            return traverse(root->right,voyage,res) && traverse(root->left,voyage,res);
+        }
+        return traverse(root->left,voyage,res) && traverse(root->right,voyage,res);
+    }
+
+    vector<int> flipMatchVoyage(TreeNode* root, vector<int>& voyage)
+    {
+        vector<int>res;
+        return traverse(root,voyage,res) ? res : vector<int>{-1};
+    }
+};

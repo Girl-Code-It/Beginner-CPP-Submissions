@@ -20,7 +20,7 @@
 
 *********************************************************************************************************************************
 
-    Solution 3: Count how many course we can complete with given prerequisites.
+    Solution 3: Kahn's Algorithm
     If we complete all courses then return true else return false. Check comments (It is not most optimized solution but it is shortest)
 
 */

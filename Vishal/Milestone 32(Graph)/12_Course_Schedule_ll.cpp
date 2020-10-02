@@ -4,7 +4,30 @@
 This Question is just an extension of previous question.
 So first check 08_Course_Schedule.cpp, I have explain all working of the code.
 
-Here I am Explaining just the change. and change is now instead of return true or false. Just return bfs vector.
+Here I am Explaining the changes required.
+
+********************************************************************************************************************************
+Solution 1: Topological Sorting.
+It is a linear ordering of vertices such that for every directed edge uv(u -> v), vertex u comes before v in the ordering.
+Topological Sorting for a graph is not possible if the graph is not a DAG. 
+
+How do we do ?
+
+1. First Find it is DAG or not. How ?
+   we have done this part in preivious question.
+
+2. Now apply Topological Sorting. (DFS + Stack)
+   Apply DFS in graph, then store the processed nodes in stack. The Node having more outgoing edges will processed first.
+   So after DFS, pop out the element of stack and store in a vector and return that vector.
+
+*************************************************************************************************************************************
+
+Solution 2: Kahn's Algorithm
+
+How do we do ?
+1. Count all prerequisities for every course i.e, indegree
+2. Store all coursees in bfs vector which doesnt require any prerequisities. We will do these courses first.
+3. Now starting bfs in all remaining courses as long as all prerequisities of a course are completed take that course as well.
 
 Time complexity - O(E + V)
 */

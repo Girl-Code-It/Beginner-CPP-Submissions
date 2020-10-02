@@ -24,10 +24,13 @@ public:
         if (pos >= n || t == 0)
             return 0;
 
+         //If already Computed
         if (memo[isBought][tran][pos] != -1)
             return memo[isBought][tran][pos];
 
         int result = solve(prices, pos + 1, tran, isBought); //Skip(Do nothing)
+        
+        //if You have bought the share now sell first, then you can buy
         if (isBought)
             result = max(result, solve(prices, pos + 1, tran - 1, false) + prices[pos]); // Sell the share
         else
@@ -37,12 +40,13 @@ public:
     }
     int maxProfit(vector<int> &prices)
     {
+        //Resize the vector (k = 2)
         memo.resize(2, vector<vector<int>>(3, vector<int>(n, -1)));
         return solve(prices, 0, 2, false);
     }
 };
 
-/* Solution 2:Using DP (More Optimized)
+/* Solution 2: Using DP (More Optimized)
 
 dp[k][i] = max(dp[k][i-1], prices[i] - prices[j] + dp[k-1][j-1]), j=[0..i-1]
 
@@ -50,6 +54,8 @@ For k transactions, on i-th day,if we don't trade then the profit is same as pre
 and if we bought the share on j-th day where j=[0..i-1], then sell the share on i-th day then the profit is
 prices[i] - prices[j] + dp[k-1, j-1].
 Actually j can be i as well. When j is i, the one more extra item prices[i] - prices[j] + dp[k-1, j] = dp[k-1, i] looks like we just lose one chance of transaction.
+
+Time Complexity - O(N*K), Space Complexity - O(N*K)
 */
 class Solution
 {

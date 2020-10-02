@@ -10,6 +10,7 @@ int longestBitonicSubseque(int arr[], int n)
     if (n <= 1)
         return n;
 
+    //Find Longest Increasing Subsequence From left
     int left[n];
     for (int i = 0; i < n; i++)
     {
@@ -20,7 +21,8 @@ int longestBitonicSubseque(int arr[], int n)
                 left[i] = max(left[i], left[j] + 1);
         }
     }
-
+    
+    //Find Longest Increasing Subsequence From right
     int right[n];
     for (int i = n-1; i >= 0; i--)
     {
@@ -32,6 +34,7 @@ int longestBitonicSubseque(int arr[], int n)
         } 
     }
 
+    //Longest Bitonic Subsequence = LIS from Left + LIS from Right - 1
     int ans = 0;
     for (int i = 0; i < n; i++)
         ans = max(ans, left[i] + right[i] - 1);

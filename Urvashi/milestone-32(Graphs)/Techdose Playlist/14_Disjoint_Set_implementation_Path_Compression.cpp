@@ -1,50 +1,35 @@
 /* Disjoint set...
 
-Time complexity:- O(E+V) where E is the no of edges and V is the no of vertices.
+Time complexity:- O(log(E+V) where E is the no of edges and V is the no of vertices.
 
-In this implementation we are doing it using an array thats why its O(n) we can also do it using binary tree in O(logn).
+In this implementation we are doing it using a tree thats why its O(logn) we can also do it using array in O(n).
 
 */
 
 #include <bits/stdc++.h>
 using namespace std;
 
-struct node{
-    int Parent; // we will store absolute parent of every node.
-    int rank; // rank is height of the tree but it will not decrease as height decrease , it will increase with height.
-}
-
 // vector whose indexes will show the values of the nodes and whose values will show the parent of the current node.
-vector <node>parent;
+vector<int> parent;
 
 // find fxn to find the absolute root node or absolute parent of the given node.
 int find(int v)
 {
     // if parent of the passed node is -1 means its itself the absolute root, so we will return it.
-    if (parent[v].Parent == -1)
+    if (parent[v] == -1)
         return v;
-    // otherwise we will recursively find the absolute root and we will store the ans so that we dont have to process it again.
-    return parent[v].Parent = find(parent[v]);
+    return find(parent[v]); // otherwise we will recursively find the absolute root.
 }
 
 // union fxn is to find the union of two nodes which are given to us as a pair.
 void Union(int fromP, int toP)
 {
-    // the set which will have lesser rank we will make other set's absolute root its root also.
+    // we will find absolute root of both the nodes.
+    fromP = find(fromP);
+    toP = find(toP);
 
-    if(parent[fromP].rank > parent[toP].rank)
-    parent[toP].Parent = fromP;
-    
-    else if(parent[fromP].rank < parent[toP].rank)
-    parent[fromP].Parent = toP;
-
-    else
-    {
-        // in case both set have same rank, rank will increamented by 1 by making any of the one as parent.
-        parent[fromP].Parent = toP;
-        parent[toP].rank++ ;
-    }
-    
+    // and will connect the absolute roots of both nodes and we will get the union of both sets.
+    parent[fromP] = toP;
 }
 
 // isCyclic fxn is used to find if there exits a cycle between the nodes present in the pair we are given.
@@ -74,20 +59,15 @@ int main()
 
     // marking all the vertices as a seperate set (disjoint set) with only one vertice and because of only one vertice there will be no
     // absolute root so we will fill -1 in place of absolute root value.
-    parent.resize(V);
-    for(int i = 0; i < V; i++)
-    {
-        parent[i].Parent = -1 ;
-        parent[i].rank = 0; // initially rank will be 0 for all.
-    }
+    parent.resize(V, -1);
 
     // pair of vertices in which we will perform find, union and iscyclic fxn.
     vector<pair<int, int>> edge_list;
 
     for (int i = 0; i < E; i++)
     {
-        // as we can apply disjoint set union in only undirected graph because union doen't take care of direction
-        //  but for the sake of simplicity we are taking vertices as from and to.
+        // as we can apply disjoint set union in only undirected graph because (AUB) == (BUA) but for the sake of simplicity we are taking
+        // vertices as from and to.
         int from, to;
         cin >> from >> to;
         edge_list.push_back({from, to});

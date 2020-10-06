@@ -1,7 +1,7 @@
 // https://leetcode.com/problems/course-schedule/
 
 /*
-    I have multiple solution for this questions. I am discussing all solutions but write code later.
+    I have multiple solution for this questions. I am discussing all solutions.
 
     Solution 1: Detect A Cycle in directed Graph.
 

@@ -1,12 +1,14 @@
-/* Kruskals Algorithm
+/* (https://practice.geeksforgeeks.org/problems/minimum-spanning-tree/1) 
+
+Kruskals Algorithm
 
 What is Kruskals Algorithm?
 => Kruskals Algorithm is used to make MST.
 Steps to be followed are:-
 1. Sort all the edges in ascending order.
 2. (i) Pick the smallest edge.
-   (ii) Check if the new edge forms a cycle in our MST.
-   (iii)  If it is forming cycle so we will no include that edge even if it is the smallest between all otherwise we will include it.
+   (ii) Check if the new edge forms a cycle in our graph.
+   (iii)  If it is forming cycle so we will not include that edge even if it is the smallest between all otherwise we will include it.
 3. Repeat 1 and 2 steps unless we include all the V-1 edges in the MST.
 
 Time complexity:- O(ElogE + ElogV), ElogE is to sort all E edges and ElogV for processing all the E edges in worst cases.

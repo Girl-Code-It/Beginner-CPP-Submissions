@@ -1,4 +1,6 @@
-/* Bellman Ford Algorithm...
+/* (https://practice.geeksforgeeks.org/problems/negative-weight-cycle/0) 
+
+Bellman Ford Algorithm...
 
 What is Bellman Ford Algorithm?
 => It is also the shortest path algorithm like dijkstra algorithm. It is used to find the shortest path
@@ -41,7 +43,7 @@ void BellmanFord(vector<edge> &Edges)
     parent[0] = -1; // 0 is its parent itself as we are starting with it.
     value[0] = 0;   // value for 0th node is set as 0 so that it will be selected first.
 
-    bool updated; // updatted variable will take care, if relaxing happened to the current vertice or not.
+    bool updated; // updated variable will take care, if relaxing happened to the current vertice or not.
 
     // doing relaxing for V-1 times for E edges.
     for (int i = 0; i < V - 1; i++)
@@ -53,7 +55,7 @@ void BellmanFord(vector<edge> &Edges)
         {
             int U = Edges[j].src; // source
             int V = Edges[j].dst; // destination
-            int wt = Edges[j].wt; // weight of edge between souce and destination
+            int wt = Edges[j].wt; // weight of edge between source and destination
 
             // checking for the condition for relaxing.
             /* firstly try to understand what is relaxing ?

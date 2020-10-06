@@ -1,4 +1,6 @@
-/* Time complexity:- O(V+E) where V is the no of vertices and E is the no of edges.
+/* (https://leetcode.com/problems/possible-bipartition/)
+
+Time complexity:- O(V+E) where V is the no of vertices and E is the no of edges.
 V is to traverse every vertice and E is to color the nodes of the graph.
 
 
@@ -59,8 +61,7 @@ public:
             adj[dislikes[i][0]].push_back(dislikes[i][1]);
             adj[dislikes[i][1]].push_back(dislikes[i][0]);
         }
-        // taking a coloring vector which we will use to show if a node is colored or not (initialised by 
-	-1)
+    // taking a coloring vector which we will use to show if a node is colored or not (initialised by -1)
         vector<int> color(N+1, -1);
         for(int i = 1; i <= N; i++)
         {

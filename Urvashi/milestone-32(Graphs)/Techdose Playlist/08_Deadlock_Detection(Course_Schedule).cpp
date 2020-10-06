@@ -1,4 +1,6 @@
-/* Time complexity:- O(V+E) where V is the no of vertices and E is the no of edges. V is for traversing every vertice and E is to color them.
+/* (https://leetcode.com/problems/course-schedule/)
+
+Time complexity:- O(V+E) where V is the no of vertices and E is the no of edges. V is for traversing every vertice and E is to color them.
 
 Approach:- I have used graph coloring technique here and i have used three colors 0, 1 and 2.
 

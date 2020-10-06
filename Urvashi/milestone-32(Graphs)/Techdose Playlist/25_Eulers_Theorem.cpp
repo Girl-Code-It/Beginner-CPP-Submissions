@@ -1,4 +1,6 @@
-/* Euler's Theorem..
+/* (https://practice.geeksforgeeks.org/problems/euler-circuit-and-path/1) 
+
+Euler's Theorem..
 
 Some concepts:-
 1. Walk:- Walk means travelling the graph by visiting all the node any no of times.

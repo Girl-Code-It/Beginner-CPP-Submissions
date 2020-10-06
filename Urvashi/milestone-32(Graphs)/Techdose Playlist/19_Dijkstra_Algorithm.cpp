@@ -1,4 +1,6 @@
-/* Dijkstra Algorithm..
+/* (https://practice.geeksforgeeks.org/problems/implementing-dijkstra-set-1-adjacency-matrix/1)
+
+Dijkstra Algorithm..
 
 What is Dijkstra Algorithm?
 => It is the shortest path algorithm, used to connect two given vertices using the shortest path and covering 
@@ -12,7 +14,7 @@ Steps for Dijkstra algorithm are:-
     (ii) Mark the node as processed.
     (iii) Update all adjacent vertices if cost[u] + wt[uv] < cost[v] else skip updation.
 
-Time complexity:- O(ElogV). 
+Time complexity:- O(ElogV). zzz
 
 Limitation:- Dijkstra Algorithm do not detect negative edge cycle.
 

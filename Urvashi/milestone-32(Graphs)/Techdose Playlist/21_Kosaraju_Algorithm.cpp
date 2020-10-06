@@ -1,4 +1,6 @@
-/* Kosaraju Algorithm..
+/* (https://practice.geeksforgeeks.org/problems/strongly-connected-components-kosarajus-algo/1)
+
+ Kosaraju Algorithm..
 
 What is Kosaraju Algorithm?
 => It is used to find the strongly connected components in a graph.

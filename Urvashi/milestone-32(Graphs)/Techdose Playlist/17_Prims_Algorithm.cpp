@@ -1,4 +1,6 @@
-/* Time complexity:- O(v*v) where V is the no of vertices.
+/* (https://practice.geeksforgeeks.org/problems/minimum-spanning-tree/1) 
+
+Time complexity:- O(v*v) where V is the no of vertices.
 
 Approach:- 
 What is Prims Algorithm?
@@ -6,7 +8,7 @@ What is Prims Algorithm?
 
 What is Minimum Spanning tree?
 => So, firstly a sapnning tree is the tree which will be formed by joining min edges so that all the vertices will be in the tree
-and after removin one edge from the spanning tree, it should become disjoint tree. Minimum Spanning tree is Spanning tree with min
+and after removing one edge from the spanning tree, it should become disjoint tree. Minimum Spanning tree is Spanning tree with min
 cost associated while traversing the tree.
 
 If V is the no of vertices in the graph then MST will have V-1 edges. 

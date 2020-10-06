@@ -1,7 +1,9 @@
-/* Time complexity:- O(V*E) where V is the no of vertices and E is the no of edges.
+/* (https://leetcode.com/problems/clone-graph/)
+
+Time complexity:- O(V*E) where V is the no of vertices and E is the no of edges.
 
 Approach:- As we have to make a deep copy of the given graph so we will take a visited array to store the value of the node
-which we have vsisited. And if adjacent node of some vertice is stored in visited array then we will not visit it again 
+which we have visited. And if adjacent node of some vertice is stored in visited array then we will not visit it again 
 we will just put that node in the adjacency list of that vertice.
 
 */
@@ -12,7 +14,7 @@ public:
         //Node* copy = new Node(node->val);
         visited[node->val] = node;
         
-        // iterating every neighbour of current vertice.
+        // iterating every neighbor of current vertice.
         for(auto ele: curr->neighbors)
         {
             if(visited[ele->val] == NULL)

@@ -1,4 +1,6 @@
-/* Disjoint set...
+/* (https://practice.geeksforgeeks.org/problems/disjoint-set-union-find/1)
+
+Disjoint set...
 
 Time complexity:- O(E+V) where E is the no of edges and V is the no of vertices.
 
@@ -57,8 +59,7 @@ int main()
     int E, V; // denotes no of edges and vertices.
     cin >> E >> V;
 
-    // marking all the vertices as a seperate set (disjoint set) with only one vertice and because of only one vertice there will be no
-    // absolute root so we will fill -1 in place of absolute root value.
+    // marking all the vertices as a seperate set (disjoint set) with only one vertice and because of only one vertice there will be no absolute root so we will fill -1 in place of absolute root value.
     parent.resize(V, -1);
 
     // pair of vertices in which we will perform find, union and iscyclic fxn.
@@ -66,8 +67,8 @@ int main()
 
     for (int i = 0; i < E; i++)
     {
-        // as we can apply disjoint set union in only undirected graph because (AUB) == (BUA) but for the sake of simplicity we are taking
-        // vertices as from and to.
+        // as we can apply disjoint set union in only undirected graph because union dont take care of 
+        // direction but for the sake of simplicity we are taking vertices as from and to.
         int from, to;
         cin >> from >> to;
         edge_list.push_back({from, to});

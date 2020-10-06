@@ -1,4 +1,6 @@
-/* Tarjans Algorithm..
+/* (https://practice.geeksforgeeks.org/problems/strongly-connected-component-tarjanss-algo/0) 
+
+Tarjans Algorithm..
 
 What is Tarjans Algorithm?
 => It is used to find the strongly connected components in the graph as like Kosaraju Algorithm.

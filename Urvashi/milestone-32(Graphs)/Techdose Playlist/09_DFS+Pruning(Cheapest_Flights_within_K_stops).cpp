@@ -1,4 +1,6 @@
-/* Time complexity:- (V+E) where V is the no of vertices and E is the no of edges.
+/* (https://leetcode.com/problems/cheapest-flights-within-k-stops/) 
+
+Time complexity:- (V+E) where V is the no of vertices and E is the no of edges.
 
 We are applying dfs + Pruning in this Problem.
 
@@ -15,7 +17,7 @@ class Solution {
 public:
     void solve(vector<vector<int>> &adj, vector<vector<int>> &cost, int src, int dst, int k, int &fare, int totalCost, vector<bool>&visited)
     {
-    	// if k is less than -1 means we have reached the destination successfully from the source as we are decrementig k at destination also.
+    	// if k is less than -1 means we have reached the destination successfully from the source as we are decrementing k at destination also.
         if(k < -1)
             return;
         
@@ -31,8 +33,7 @@ public:
         visited[src] = true;
         for(int i = 0; i < adj[src].size(); i++)
         {
-        	// if visited is false and total cost till now is less than or equal to the fare for the other path only then we will proceed
-        	// to this path
+        	// if visited is false and total cost till now is less than or equal to the fare for the other path only then we will proceed to this path
             if(!visited[adj[src][i]] && (totalCost + cost[src][adj[src][i]] <= fare))
                 solve(adj, cost, adj[src][i], dst, k-1, fare, totalCost + cost[src][adj[src][i]], visited);
                 

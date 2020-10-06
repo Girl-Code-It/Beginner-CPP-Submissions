@@ -1,6 +1,7 @@
 // https://practice.geeksforgeeks.org/problems/detect-cycle-in-a-directed-graph/1
 
-//. Explanational will be added later
+//  BFS Traversal : Time Complexity : O(V + E),  Space Complexity : O(V)
+
 #include <bits/stdc++.h>
 using namespace std;
 
@@ -10,6 +11,7 @@ bool isCycleUtil(vector<int> g[], vector<bool> &visited, int curr)
     if (visited[curr])
         return true;
 
+    //Else make this vertex true and check cycle in its adjacency list
     visited[curr] = true;
     for (int j = 0; j < g[curr].size(); j++)
     {
@@ -24,7 +26,6 @@ bool isCycleUtil(vector<int> g[], vector<bool> &visited, int curr)
 bool isCyclic(int n, vector<int> g[])
 {
     vector<bool> visited(n);
-
     for (int i = 0; i < n; i++)
     {
         visited[i] = true;

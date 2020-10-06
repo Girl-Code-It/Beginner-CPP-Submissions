@@ -1,7 +1,7 @@
 // https://leetcode.com/problems/possible-bipartition/
 
 // Solution 1: Using HashMap/ HashSet build two hashMap such that no two dislike each other are in same group.
-//Solution 2: Using DFS 
+// Solution 2: Using DFS 
 class Solution
 {
     bool isBipartite(int node, vector<vector<int>> &adj, vector<int> &color)

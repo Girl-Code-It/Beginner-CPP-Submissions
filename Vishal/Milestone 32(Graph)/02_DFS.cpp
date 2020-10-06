@@ -8,12 +8,14 @@
 #include <bits/stdc++.h>
 using namespace std;
 
+// Solution 1: Using Stack
 vector<int> dfs(vector<int> g[], int n)
 {
     // This is a Boolean Vector
     vector<bool> visited(n);
     vector<int> result;
 
+    // This is stack which store visited vertices.
     stack<int> st;
     st.push(0);
 
@@ -24,6 +26,7 @@ vector<int> dfs(vector<int> g[], int n)
 
         if (!visited[x])
         {
+            
             result.push_back(x);
             visited[x] = true;
 
@@ -36,6 +39,19 @@ vector<int> dfs(vector<int> g[], int n)
     }
 
     return result;
+}
+
+// Solution 2: Recursion
+void dfs(int start, vector<int> g[], bool *vis)
+{
+    vis[start] = true;
+    cout << start << " ";
+
+    for(int i = 0; i < g[start].size(); i++)
+    {
+        if(vis[g[start][i]] == false)
+        dfs(g[start][i], g, vis);
+    }
 }
 
 int main()

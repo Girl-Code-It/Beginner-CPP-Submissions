@@ -1,83 +1,89 @@
-/* Disjoint set...
+/* Disjoint set implementation using rank.
 
-Time complexity:- O(log(E+V) where E is the no of edges and V is the no of vertices.
-
-In this implementation we are doing it using a tree thats why its O(logn) we can also do it using array in O(n).
-
+Time complexity:- O(V*E)
 */
 
-#include <bits/stdc++.h>
+#include<bits/stdc++.h>
 using namespace std;
 
-// vector whose indexes will show the values of the nodes and whose values will show the parent of the current node.
-vector<int> parent;
+struct node {
+	int parent;
+	int rank;
+};
 
-// find fxn to find the absolute root node or absolute parent of the given node.
+vector<node> dsuf;
+//FIND operation
 int find(int v)
 {
-    // if parent of the passed node is -1 means its itself the absolute root, so we will return it.
-    if (parent[v] == -1)
-        return v;
-    return find(parent[v]); // otherwise we will recursively find the absolute root.
+	if(dsuf[v].parent==-1)
+		return v;
+    //Path Compression by storing the parent of the node which is being processed.
+	return dsuf[v].parent=find(dsuf[v].parent);	
 }
 
-// union fxn is to find the union of two nodes which are given to us as a pair.
-void Union(int fromP, int toP)
+void union_op(int fromP,int toP)
 {
-    // we will find absolute root of both the nodes.
-    fromP = find(fromP);
-    toP = find(toP);
+	//fromP = find(fromP);
+	//toP = find(toP);
 
-    // and will connect the absolute roots of both nodes and we will get the union of both sets.
-    parent[fromP] = toP;
+	//UNION by RANK, the set having low rank will be the parent of the other set.
+	if(dsuf[fromP].rank > dsuf[toP].rank)	//fromP has higher rank
+		dsuf[toP].parent = fromP;
+	else if(dsuf[fromP].rank < dsuf[toP].rank)	//toP has higher rank
+		dsuf[fromP].parent = toP;
+	else
+	{
+		//Both have same rank and so anyone can be made as parent
+		dsuf[fromP].parent = toP;
+		dsuf[toP].rank +=1;		//Increase rank of parent
+	}
 }
 
-// isCyclic fxn is used to find if there exits a cycle between the nodes present in the pair we are given.
-bool isCyclic(vector<pair<int, int>> &edge_list)
+bool isCyclic(vector<pair<int,int>>& edge_List)
 {
-    // for every pair present in edge list.
-    for (auto p : edge_list)
-    {
-        // we will find the absolute parents of both the nodes.
-        int fromP = find(p.first);
-        int toP = find(p.second);
+	for(auto p: edge_List)
+	{
+		int fromP = find(p.first);	//FIND absolute parent of subset
+		int toP = find(p.second);
 
-        // if absolute parent of both nodes is same that means there is a path between both nodes which mens there is a cycle.
-        if (fromP == toP)
-            return true;
+        // if absolute parent of both the sets are equal means there is path between the nodes and if we will
+        // join them then it will be the second path which will form cycle. 
+		if(fromP == toP)
+			return true;
 
-        // if parents are not same then simply take union to make parents same.
-        Union(fromP, toP);
-    }
-    return false;
+		//UNION operation, if there is no path before then just join them.
+		union_op(fromP,toP);	//UNION of 2 sets
+	}
+	return false;
 }
 
 int main()
 {
-    int E, V; // denotes no of edges and vertices.
-    cin >> E >> V;
+	int E;	//No of edges
+	int V;	//No of vertices (0 to V-1)
+	cin>>E>>V;
 
-    // marking all the vertices as a seperate set (disjoint set) with only one vertice and because of only one vertice there will be no
-    // absolute root so we will fill -1 in place of absolute root value.
-    parent.resize(V, -1);
+	dsuf.resize(V);	//Mark all vertices as separate subsets with only 1 element
+	for(int i=0;i<V;++i)	//Mark all nodes as independent set
+	{
+		dsuf[i].parent=-1;
+		dsuf[i].rank=0;
+	}
 
-    // pair of vertices in which we will perform find, union and iscyclic fxn.
-    vector<pair<int, int>> edge_list;
+	vector<pair<int,int>> edge_List;	//Adjacency list
+	for(int i=0;i<E;++i)
+	{
+		int from,to;
+		cin>>from>>to;
+		edge_List.push_back({from,to});
+	}
 
-    for (int i = 0; i < E; i++)
-    {
-        // as we can apply disjoint set union in only undirected graph because (AUB) == (BUA) but for the sake of simplicity we are taking
-        // vertices as from and to.
-        int from, to;
-        cin >> from >> to;
-        edge_list.push_back({from, to});
-    }
-
-    if (isCyclic(edge_list))
-        cout << "TRUE\n";
-    else
-        cout << "FALSE\n";
-
-    return 0;
+	if(isCyclic(edge_List))
+		cout<<"TRUE\n";
+	else
+		cout<<"FALSE\n";
+	
+	return 0;
 }
 
+//TIME COMPLEXITY: O(E.V)

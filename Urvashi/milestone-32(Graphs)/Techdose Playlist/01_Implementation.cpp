@@ -12,7 +12,7 @@ using namespace std;
 
 int main()
 {
-	int t, vertices, edges, u, v;
+    int t, vertices, edges, u, v;
     cin >> t;
 
     while(t--)

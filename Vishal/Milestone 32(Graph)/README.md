@@ -1,10 +1,12 @@
-# Graph - A Data Structure
+# Graph - Data Structure & Algorithms
 
-### How to master Graph ❓
+> A Graph is a non-linear data structure consisting of nodes and edges.
+
+## How to master Graph ❓
 
 If you follow this flow of learning Graph Data structure and related Algorithms, then you can master graph easily.
 
-#### Steps to be followed
+### Steps to be followed
 
 1. Learn How to build a graph
     * Adjacency Matrix
@@ -31,4 +33,4 @@ If you follow this flow of learning Graph Data structure and related Algorithms,
 	* Sudoko Solver
 	
 	
-#### Important Algorithms
+### Important Algorithms

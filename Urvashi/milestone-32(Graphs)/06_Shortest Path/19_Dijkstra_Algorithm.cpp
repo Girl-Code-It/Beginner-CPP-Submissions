@@ -3,8 +3,7 @@
 Dijkstra Algorithm..
 
 What is Dijkstra Algorithm?
-=> It is the shortest path algorithm, used to connect two given vertices using the shortest path and covering 
-all the V-1 edges.
+=> It is the shortest path algorithm, used to connect source node to every other node using the shortest path and covering all the V-1 edges.
 
 Steps for Dijkstra algorithm are:-
 1. Mark all the vertices as unvisited initially.
@@ -14,7 +13,7 @@ Steps for Dijkstra algorithm are:-
     (ii) Mark the node as processed.
     (iii) Update all adjacent vertices if cost[u] + wt[uv] < cost[v] else skip updation.
 
-Time complexity:- O(ElogV). zzz
+Time complexity:- O(ElogV).
 
 Limitation:- Dijkstra Algorithm do not detect negative edge cycle.
 

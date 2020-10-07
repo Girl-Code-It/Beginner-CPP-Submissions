@@ -3,7 +3,7 @@
 Time complexity:- O(V+E)
 
 Steps:-
-1. We will do dfs and will check before backtracking from any node that if its low value can be changes or not
+1. We will do dfs and will check before backtracking from any node that if its low value can be changed or not
 means if there is a back edge from that node or not.
 2. We will check if the given edge contains the node which is the parent of the current node, if not then that
 node is an back edge means it is the another path to make the graph joined even after removing the current edge.
@@ -27,8 +27,7 @@ void DFS(int u, vector<int> &disc, vector<int> &low, vector<int> &parent, vector
     Discovery array stores the time at which a particular node is discovered means the value of time variable 
     at that time.
 
-    Low array stores the lowest order of each node's neighbor except its direct parent. order means the number
-    of nodes connected to it.
+    Low array stores the low value of the node reachable from that node.
     */
     disc[u] = low[u] = time; 
     time += 1; 

@@ -6,7 +6,7 @@ What is Bellman Ford Algorithm?
 => It is also the shortest path algorithm like dijkstra algorithm. It is used to find the shortest path
 from source to destination node including all the vertices using V-1 edges.
 
-Similarity between dijkstra and bellman ford algorthm is:-
+Similarity between dijkstra and bellman ford algorithm is:-
 => They both will not work in case of negative edge weight cycle in the graph.
 
 Difference between dijkstra and bellman ford are:-

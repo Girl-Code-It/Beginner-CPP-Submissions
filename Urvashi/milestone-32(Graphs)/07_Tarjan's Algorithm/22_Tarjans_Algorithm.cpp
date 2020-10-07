@@ -13,7 +13,7 @@ Some concepts for Tarjans Algorithm:-
 Time complexity:- O(V+E) as we are traversing the whole graph only once.
 
 Steps to be followed for Tarjans Algorithm:-
-1. frst we will do dfs if there is any outgoing edge for a node,
+1. first we will do dfs if there is any outgoing edge for a node,
 2. Then at the time when we have traversed all the outgoing edges then we will backtrack and will see if there
 is any node coming in the backtracking path, then will check if that node is already present in the stack or not,
 if it its present in the stack then it is a back edge otherwise it is a cross edge.

@@ -13,7 +13,7 @@ Steps to be followed:-
 2. Then we will reverse every single connection's direction means if connection was U->V then we will make it 
 V->U. Reversing the direction of edge directions for the whole graph is called its transpose.
 3. Now, we will use the property of the SCC that is transpose of SCC is equal to SCC. So, after taking the 
-transpose we will travserse the graph again using DFS2 and will see the portions where DFS work correctly .
+transpose we will traverse the graph again using DFS2 and will see the portions where DFS work correctly .
 So, all those portions are called SCCs and where the DFS break it means we have to restart our DFS.
 
 */

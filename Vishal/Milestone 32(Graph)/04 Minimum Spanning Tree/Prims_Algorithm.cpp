@@ -1,4 +1,5 @@
-/*
+/* https://practice.geeksforgeeks.org/problems/minimum-spanning-tree/1
+
     Prims Algorithm : To find MST
 
     steps :
@@ -31,15 +32,16 @@ int selectMinVertex(vector<int>& value,vector<bool>& setMST)
 			minimum = value[i];
 		}
 	}
+	// return the vertex having minimum value
 	return vertex;
 }
 
 void findMST(int graph[V][V])
 {
-    //Stores MST
+    // It is used for printing MST
 	int parent[V];
 
-    //Used for edge relaxation
+    // It is Used for edge relaxation & finding vertex having minimum value.
 	vector<int> value(V,INT_MAX);	
 
     // Initaially No Vertex is included in MST
@@ -52,16 +54,16 @@ void findMST(int graph[V][V])
 	//Form MST with (V-1) edges
 	for(int i=0;i<V-1;++i)
 	{
-		//Step 1 : Select best Vertex by applying greedy method
+		//Step 1 : Select Vertex having minimum value by applying greedy method
 		int U = selectMinVertex(value,setMST);
 
-        //Step 2 : Include new Vertex in MST
+        //Step 2 : Include that Vertex in MST
 		setMST[U] = true;	
 
-		//Step 3 : Relax adjacent vertices (not yet included in MST)
+		//Step 3 : Relax adjacent vertices (not included yet in MST)
 		for(int j=0;j<V;++j)
 		{
-			/* 3 constraints to relax:-
+			/* s3 constraints to check  :
 			      1.Edge is present from U to j.
 			      2.Vertex j is not included in MST
 			      3.Edge weight is smaller than current edge weight

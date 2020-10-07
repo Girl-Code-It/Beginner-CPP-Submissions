@@ -1,7 +1,8 @@
 // Disjoint set
 
 // Time Complexity - O(V*log(E))
-// Time Complexity of Union and find operation - O(logE)
+// Time Complexity of find operation - O(logE)
+// Time Complexity of Union operation - O(1)
 
 #include<bits/stdc++.h>
 using namespace std;

@@ -1,6 +1,19 @@
-//TIME COMPLEXITY: O(ElogE + ElogV)
-//ElogE for sorting E edges in edge_list
-//ElogV for applying FIND & UNION operations on E edges having V vertices
+/*
+    https://practice.geeksforgeeks.org/problems/minimum-spanning-tree/1
+
+    Kruskals Algorithm :
+
+    Steps :
+    1 Sort edges in ascending order of their weight
+    2. Pick smallest edges, check if oit is forming cycle or not:
+        2. a) if it forms, skip that edge.
+        2. b) otherwise,  add this edge to mst.
+    3. Repeat step 1 & 2 unit mst contain V-1 edges.
+
+    TIME COMPLEXITY: O(ElogE + ElogV)
+    ElogE for sorting E edges in edge_list
+    ElogV for applying FIND & UNION operations on E edges having V vertices
+*/
 
 #include <bits/stdc++.h>
 using namespace std;
@@ -23,6 +36,7 @@ vector<Edge> mst;
 //FIND operation
 int find(int v)
 {
+    // It mean it is absolute parent of itself. 
     if (disjointSet[v].parent == -1)
         return v;
     return disjointSet[v].parent = find(disjointSet[v].parent); //Path Compression
@@ -43,6 +57,7 @@ void union_op(int fromP, int toP)
     }
 }
 
+// Sort edges in ascending order of their weight
 bool comparator(Edge a, Edge b)
 {
     return a.wt < b.wt;
@@ -50,22 +65,28 @@ bool comparator(Edge a, Edge b)
 
 void Kruskals(vector<Edge> &edge_List, int V, int E)
 {
+    // Steps 1 : Sorting according edge weight
     sort(edge_List.begin(), edge_List.end(), comparator);
 
     int i = 0, j = 0;
     while (i < V - 1 && j < E)
     {
-        int fromP = find(edge_List[j].src); //FIND absolute parent of subset
+        //FIND absolute parent of subset
+        int fromP = find(edge_List[j].src); 
         int toP = find(edge_List[j].dst);
 
+        // If they have same absolute parent, it means they are in same set.
         if (fromP == toP)
         {
+            // Increase edge count, and skip union operation
             ++j;
             continue;
         }
 
-        //UNION operation
-        union_op(fromP, toP); //UNION of 2 sets
+        // Else, Join two disjoin set using Union Operation
+        union_op(fromP, toP);
+
+        // As jth edge is processed, add it to MST.
         mst.push_back(edge_List[j]);
         ++i;
     }

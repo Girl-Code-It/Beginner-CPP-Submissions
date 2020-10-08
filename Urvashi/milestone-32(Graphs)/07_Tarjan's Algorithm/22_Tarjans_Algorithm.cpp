@@ -40,14 +40,14 @@ void DFS(int u, vector<int> &disc, vector<int> &low, stack<int> &mystack, vector
 
     for (int v : adj[u])
     {
-        // if a node is not traversed then there will be a back edge.
+        // if node is not visited then visit it and push it into the stack.
         if (disc[v] == -1)
         {
             DFS(v, disc, low, mystack, presentInStack);
             low[u] = min(low[u], low[v]);
         }
 
-        // otherwise there will be a cross edge.
+        // if a node is present in the stack then the new edge we will form through u and v will be back edge.
         else if (presentInStack[v])
             low[u] = min(low[u], disc[v]);
     }

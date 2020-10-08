@@ -11,7 +11,7 @@ What is Euler's theorem?
 => It is used to find if there is a euler path cycle in the graph.
 
 what is Euler path cycle?
-=> A Euler path is the path in which ywo conditions are followed.
+=> A Euler path is the path in which two conditions are followed.
 1. We can traverse all the edges of the graph exactly once.
 2. Starting node and ending node should be equal.
 
@@ -29,7 +29,7 @@ more than one node forms an edge.
 
 2. Now, in Semi-Eulerian path there should be exacly two nodes having odd no of edges one is starting node and
 other is ending node. But why? because except start and end node all the nodes will follow eulerian path means
-path will start from that node and will end at that node so we will have even nodes.
+path will start from that node and will end at that node so they will have even nodes.
 
 */
 
@@ -82,7 +82,7 @@ int find_Euler()
         if (adj[i].size() & 1)
             odd += 1;
 
-    if (odd > 2) //Only start and end node can have odd degree
+    if (odd > 2) //Only start and end node can have odd degree otherwise it will be non-eulerian
         return 0;
 
     return (odd == 0) ? 2 : 1; //1->Semi-Eulerian...2->Eulerian

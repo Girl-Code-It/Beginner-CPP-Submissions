@@ -3,7 +3,7 @@
 Both the solutions are based on topological soting. So,
 
 What is Topological sorting?
-=> Topological sorting is to sort the graph nodes in such a order such that for every edge uv ordering should be from u to v.
+=> Topological sorting is to sort the graph nodes in such a order such that for every edge uv direction should be from u to v.
 Topological sorting is possible only in the case of the directed acyclic graph, that's why we have checked for cycle in our solution1. 
 
 Solution1:- DFS + stack

@@ -45,7 +45,7 @@ int find(int v)
 
 void union_op(int fromP, int toP)
 {
-    // the set which will have lesser rank we will make other set's absolute root its root also.
+    // the set which will have lesser rank will be the parent of other set.
 
     if (dsuf[fromP].rank > dsuf[toP].rank)
         dsuf[toP].parent = fromP;
@@ -115,9 +115,6 @@ int main()
     cin >> E >> V;
 
     dsuf.resize(V);
-
-    // marking all the vertices as a seperate set (disjoint set) with only one vertice and because of only one vertice there will be no
-    // absolute root so we will fill -1 in place of absolute root value.
 
     for (int i = 0; i < E; i++)
     {

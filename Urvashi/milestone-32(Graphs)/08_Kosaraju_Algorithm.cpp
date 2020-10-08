@@ -6,7 +6,7 @@ What is Kosaraju Algorithm?
 => It is used to find the strongly connected components in a graph.
 Strongly connected components are the parts of graph in which there is path from every node to every other node.
 
-Time compexity:- O(v^3)
+Time compexity:- O(V + E) as we are doing simple dfs.
 
 Steps to be followed:-
 1. Fistly we will do dfs of the graph and will store it in a stack.
@@ -72,7 +72,7 @@ void findSCCs()
     // For all V nodes.
     for(int i = 0; i < V; i++)
     {
-        //Step1:- If the node is unvisiteed then we will visit it and push it into the stack.
+        //Step1:- If the node is unvisited then we will visit it and push it into the stack.
         if(!visited[i])
         DFS1(i, visited, mystack);
     }

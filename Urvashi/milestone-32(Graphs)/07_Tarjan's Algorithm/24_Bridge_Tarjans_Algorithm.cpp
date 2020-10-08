@@ -27,7 +27,7 @@ void DFS(int u, vector<int> &disc, vector<int> &low, vector<int> &parent, vector
     Discovery array stores the time at which a particular node is discovered means the value of time variable 
     at that time.
 
-    Low array stores the low value of the node reachable from that node.
+    Low array stores the discovery value of the lowest value node reachable from that node.
     */
     disc[u] = low[u] = time; 
     time += 1; 

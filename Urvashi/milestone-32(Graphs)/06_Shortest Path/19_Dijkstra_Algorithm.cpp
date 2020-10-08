@@ -37,8 +37,8 @@ int selectMinVertex(vector<int> &value, vector<bool> &processed)
 		// the current minimum but if the node is already processed then we will not process it again.
 		if (processed[i] == false && value[i] < minimum)
 		{
-			// as index of the value array is howing the node value so we will store the vertex value
-			// in vertex variable as i and will return the vertex at end.
+			// as index of the value array is having the node value so we will store the vertex value
+			// in vertex variable as i and will return the vertex.
 			vertex = i;
 			minimum = value[i];
 		}

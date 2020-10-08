@@ -1,6 +1,4 @@
 /* 
-    https://leetcode.com/problems/critical-connections-in-a-network/
-
     Articulation Point : A node is called articulation point if after removing that node and its associated edges,
     we will get more components than earlier.
 

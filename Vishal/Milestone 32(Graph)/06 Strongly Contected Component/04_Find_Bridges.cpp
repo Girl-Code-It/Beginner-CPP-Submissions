@@ -1,6 +1,7 @@
 /* 
-    Bridge : It is an edge which if it is removed then the graph will split into components.
+    https://leetcode.com/problems/critical-connections-in-a-network/
 
+    Bridge : It is an edge which if it is removed then the graph will split into components.
     Time complexity:- O(V+E)
 */
 

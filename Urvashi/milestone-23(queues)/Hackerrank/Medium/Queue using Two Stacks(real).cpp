@@ -18,7 +18,8 @@ int main() {
         else 
         {
            if(Front.empty())
-           { // move all the elements from "Rear" stack to "Front" stack
+           { 
+		       // move all the elements from "Rear" stack to "Front" stack
                while(!Rear.empty())
                {
                    Front.push(Rear.top());

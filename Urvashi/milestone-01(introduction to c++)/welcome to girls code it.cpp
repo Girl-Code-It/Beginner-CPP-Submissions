@@ -2,5 +2,5 @@
 using namespace std;
 int main()
 {
-cout<<"welcome to girls code it";		
+    cout << "welcome to girls code it";
 }

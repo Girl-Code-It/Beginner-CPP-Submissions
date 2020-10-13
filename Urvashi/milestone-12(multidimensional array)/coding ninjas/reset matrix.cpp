@@ -1,11 +1,13 @@
- #include <stdio.h>              //question-8(reset matrix):-Given an m x n matrix of 0s and 1s, if an element is 0, set its entire row and column to 0.
-// function to print the matrix
+//question-8(reset matrix):-Given an m x n matrix of 0s and 1s, if an element is 0, set its entire row and
+// column to 0. function to print the matrix
+
+#include <stdio.h>
 void printMatrix(int mat[3][3])
 {
     for (int i = 0; i < 3; i++)
     {
         for (int j = 0; j < 3; j++)
-            printf("%d ",mat[i][j]);
+            printf("%d ", mat[i][j]);
         printf("\n");
     }
     printf("\n");
@@ -26,7 +28,7 @@ void convert(int mat[3][3])
     // traverse the matrix
     for (int i = 0; i < 3; i++)
         for (int j = 0; j < 3; j++)
-            if (mat[i][j] == 0)    // cell (i, j) has value 0
+            if (mat[i][j] == 0) // cell (i, j) has value 0
                 // change each non-zero element in row i and column j to -1
                 changeRowColumn(mat, i, j);
     // traverse the matrix once again and replace cells having
@@ -43,7 +45,7 @@ int main()
     printf("Enter the boolean matrix's element\n");
     for (int i = 0; i < 3; i++)
         for (int j = 0; j < 3; j++)
-            scanf("%d",&mat[i][j]);
+            scanf("%d", &mat[i][j]);
     printMatrix(mat);
     // convert the matrix
     convert(mat);

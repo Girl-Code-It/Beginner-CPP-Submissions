@@ -1,12 +1,10 @@
-#include<iostream>
+#include <iostream>
 using namespace std;
 
-int main ()
+int main()
 {
-char i ;
-cout<<"enter a character :";
-cin>>i;	
-
-	cout<<"ASCII value of "<<i<<"is="<<(int)i;
-	
+	char i;
+	cout << "enter a character :";
+	cin >> i;
+	cout << "ASCII value of " << i << "is=" << (int)i;
 }

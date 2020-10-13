@@ -1,12 +1,12 @@
-#include<stdio.h>
+#include <stdio.h>
 typedef long long ll;
 
 ll furious(ll n)
 {
     ll rem = 0;
-    while(n)
+    while (n)
     {
-        rem += n/5;
+        rem += n / 5;
         n /= 5;
     }
     return rem;
@@ -14,26 +14,25 @@ ll furious(ll n)
 
 int main()
 {
-    ll n,f;
-    scanf("%lld",&n);
+    ll n, f;
+    scanf("%lld", &n);
 
-    while(n--)
+    while (n--)
     {
-        scanf("%lld",&f);
-        ll low = 5,high = 1e10,mid,ans = high;
-        while(low <= high)
+        scanf("%lld", &f);
+        ll low = 5, high = 1e10, mid, ans = high;
+        while (low <= high)
         {
-            mid = low + (high - low)/2;
+            mid = low + (high - low) / 2;
             ll var = furious(mid);
-            if(var >= f)
+            if (var >= f)
             {
-                high = mid-1;
+                high = mid - 1;
                 ans = mid;
             }
             else
-                low = mid+1;
+                low = mid + 1;
         }
-        printf("%d\n",ans);
+        printf("%d\n", ans);
     }
-
 }

@@ -1,33 +1,35 @@
-class Solution {
+class Solution
+{
 public:
-    Node* connect(Node* root) {
-        
-        if(!root)
+    Node *connect(Node *root)
+    {
+
+        if (!root)
             return root;
-        
-        queue<Node*> q;
+
+        queue<Node *> q;
         q.push(root);
         q.push(NULL);
-        
-        while(!q.empty()) 
+
+        while (!q.empty())
         {
             Node *ptr = q.front();
             q.pop();
-            
-            if(!ptr && q.empty())
+
+            if (!ptr && q.empty())
             {
                 break;
             }
-            else if(!ptr) 
+            else if (!ptr)
             {
                 q.push(NULL);
             }
-            else 
+            else
             {
                 ptr->next = q.front();
-                if(ptr->left)
+                if (ptr->left)
                     q.push(ptr->left);
-                if(ptr->right)
+                if (ptr->right)
                     q.push(ptr->right);
             }
         }

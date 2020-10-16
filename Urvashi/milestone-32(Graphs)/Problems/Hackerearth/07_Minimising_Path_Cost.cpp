@@ -2,8 +2,7 @@
 using namespace std;
 #define ll long long
 
-int INF = 1e9;
-int dp[103][103];
+int dist[103][103];
 
 void floydWarshall(int n, int graph[][104])
 {
@@ -11,7 +10,7 @@ void floydWarshall(int n, int graph[][104])
     {
         for (int j = 0; j < n; j++)
         {
-            dp[i][j] = graph[i][j];
+            dist[i][j] = graph[i][j];
         }
     }
     for (int k = 0; k < n; k++)
@@ -20,9 +19,9 @@ void floydWarshall(int n, int graph[][104])
         {
             for (int j = 0; j < n; j++)
             {
-                if (dp[i][j] > dp[i][k] + dp[k][j])
+                if (dist[i][j] > dist[i][k] + dist[k][j])
                 {
-                    dp[i][j] = dp[i][k] + dp[k][j];
+                    dist[i][j] = dist[i][k] + dist[k][j];
                 }
             }
         }
@@ -42,12 +41,12 @@ int main()
         mp[S] = a;
         a++;
     }
-    int graph[104][104];
+	int  graph[104][104];
     for (int i = 0; i < n; i++)
     {
         for (int j = 0; j < n; j++)
         {
-            graph[i][j] = INF;
+            graph[i][j] = 1e4;
         }
     }
     for (int i = 0; i < m; i++)
@@ -63,10 +62,8 @@ int main()
     cin >> q;
     while (q--)
     {
-        string s1, s2;
-        cin >> s1 >> s2;
-        cout << dp[mp[s1] - 1][mp[s2] - 1] << endl;
+        string src, dst;
+        cin >> src >> dst;
+        cout << dist[mp[src] - 1][mp[dst] - 1] << "\n";
     }
-
-    return 0;
 }

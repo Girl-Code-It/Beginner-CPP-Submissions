@@ -73,9 +73,6 @@ void dijkstra(int graph[V][V])
             }
         }
     }
-    //Print Shortest Path Graph
-    for (int i = 1; i < V; ++i)
-        cout << "U->V: " << parent[i] << "->" << i << "  wt = " << graph[parent[i]][i] << "\n";
 }
 
 int main()

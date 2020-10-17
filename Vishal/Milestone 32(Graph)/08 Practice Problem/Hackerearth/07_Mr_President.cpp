@@ -1,5 +1,7 @@
 // https://www.hackerearth.com/practice/algorithms/graphs/minimum-spanning-tree/practice-problems/algorithm/mr-president/
 
+
+// Solution : Brute Force Solution using Union-Find
 #include <bits/stdc++.h>
 using namespace std;
 

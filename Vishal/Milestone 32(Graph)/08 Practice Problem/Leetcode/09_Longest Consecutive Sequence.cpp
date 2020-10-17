@@ -10,7 +10,7 @@ class Solution
 public:
     int longestConsecutive(vector<int> &nums)
     {
-        // If its emoty, then sequence is not possible.
+        // If its empty, then sequence is not possible.
         if(nums.empty())
             return 0;
         

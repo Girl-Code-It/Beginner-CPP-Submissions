@@ -3,13 +3,13 @@
 #include <bits/stdc++.h>
 using namespace std;
 vector<int> adj[1000000];
-int dist[10001], visted[100000];
+int dist[10001], visited[100000];
 
 void BFS()
 {
     queue<int> q;
     q.push(1);
-    visted[1] = 1;
+    visited[1] = 1;
     dist[1] = 0;
 
     // BFS 
@@ -20,11 +20,11 @@ void BFS()
 
         for (int child : adj[current])
         {
-            if (!visted[child])
+            if (!visited[child])
             {
                 q.push(child);
                 dist[child] = dist[current] + 1;
-                visted[child] = 1;
+                visited[child] = 1;
             }
         }
     }
@@ -40,7 +40,7 @@ int main()
         cin >> N >> M;
         
         for (int i = 1; i <= N; i++)
-            adj[i].clear(), visted[i] = 0;
+            adj[i].clear(), visited[i] = 0;
 
         for (int i = 0; i < M; i++)
         {

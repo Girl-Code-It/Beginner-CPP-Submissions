@@ -55,7 +55,7 @@ int main()
     {
         cin >> N >> M >> Q;
 
-        // Initialize
+        // Initialize(We can use vector for more optimization, like board.resize(N+1, vector<int>(M+1, 0)))
         for (long i = 0; i <= N; i++)
             for (long j = 0; j <= M; j++)
                 board[i][j] = 0, visited[i][j] = 0;

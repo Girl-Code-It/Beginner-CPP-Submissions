@@ -9,7 +9,7 @@ vector<pair<int, int>> v = {{-1, 0}, {1, 0}, {0, 1}, {0, -1}};
 
 bool isvalid(int a, int b)
 {
-    return (a >= 1 && a <= n && b >= 1 && b <= m);
+    return (a >= 1 && a <= n && b >= 1 && b <= m && mat[X][Y] == 1);
 }
 
 int bfs(int x, int y, int count)
@@ -33,7 +33,7 @@ int bfs(int x, int y, int count)
             int Y = yy + v[i].second;
 
             // Mark as Ocean (Dead)
-            if (isvalid(X, Y) && mat[X][Y] == 1)
+            if (isvalid(X, Y))
             {
                 q.push(make_pair(X, Y));
                 mat[X][Y] = 0;

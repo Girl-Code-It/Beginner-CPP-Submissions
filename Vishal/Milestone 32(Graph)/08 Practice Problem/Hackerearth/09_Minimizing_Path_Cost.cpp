@@ -24,7 +24,7 @@ int main()
         graph[mp[s2]][mp[s1]] = x;
     }
 
-    // Floyd Warshall algorithm
+    // Floyd Warshall algorithm O(N^3)
     vector<vector<int>> dist(n, vector<int>(n));
     for (int i = 0; i < n; i++)
         for (int j = 0; j < n; j++)

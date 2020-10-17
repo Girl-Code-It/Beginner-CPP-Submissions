@@ -1,38 +1,57 @@
 /* 
     https://www.hackerearth.com/practice/algorithms/graphs/depth-first-search/practice-problems/algorithm
     /mrinal-and-three-musketeers-128f4c52/description/
-*/
+    
+    Solution : Using DFS
 
-// Time Complexity : O(V + E),  Space Complexity : O(V + E)
+    Here I am using unordered_set to find there is a edge between child and parent of source.
+*/
 
 #include <bits/stdc++.h>
 using namespace std;
 
-void dfs(int start, vector<int> g[], bool *vis)
+void DFS(int &minSum, int source, unordered_set<int> Graph[], int parent, vector<bool> &visited)
 {
-    vis[start] = true;
-    cout << start << " ";
-
-    for(int i = 0; i < g[start].size(); i++)
+    visited[source] = true;
+    for (auto child : Graph[source])
     {
-        if(vis[g[start][i]] == false)
-        dfs(g[start][i], g, vis);
+        if (!visited[child])
+            DFS(minSum, child, Graph, source, visited);
+
+        else if (child != parent)
+        {
+            // Minus 6 because we dont have to count other two musketeers as its neighbours.
+            if (Graph[child].find(parent) != Graph[child].end())
+                minSum = min(minSum, (int)(Graph[parent].size() + Graph[child].size() + Graph[source].size() - 6));
+        }
     }
 }
 
 int main()
 {
-    int n, m, u, v;
+    int n, m;
     cin >> n >> m;
+    unordered_set<int> Graph[n + 1];
+    vector<bool> visited(n + 1);
 
-    vector<vector<int>> adj(n);
-
-    for (int i = 0; i < m; i++)
+    while (m--)
     {
-        cin >> u >> v;
-        adj[u].push_back(v);
-        adj[v].push_back(u);
+        int a, b;
+        cin >> a >> b;
+        Graph[a].insert(b);
+        Graph[b].insert(a);
     }
 
+    int minSum = (int)1e6;
+    for (int i = 1; i < n + 1; i++)
+    {
+        if (!visited[i])
+            DFS(minSum, i, Graph, -1, visited);
+    }
+
+    if (minSum == 1e6)
+        minSum = -1;
+
+    cout << minSum << "\n";
     return 0;
 }

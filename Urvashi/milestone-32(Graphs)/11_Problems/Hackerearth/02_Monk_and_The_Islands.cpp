@@ -40,9 +40,8 @@ int main()
 
     while (t--)
     {
-
+        
         cin >> N >> M;
-
         for (int i = 1; i <= N; i++)
         {
             adj[i].clear();

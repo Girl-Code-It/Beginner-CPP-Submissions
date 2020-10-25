@@ -2,7 +2,7 @@
 using namespace std;
 int main()
 {
-	std::cin.sync_with_stdio(false);
+    std::cin.sync_with_stdio(false);
     int t,n;
     cin>>t;
     while(t--)
@@ -25,3 +25,4 @@ int main()
      cout<<endl;
     }
 }
+

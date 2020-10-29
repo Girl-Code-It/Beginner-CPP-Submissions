@@ -1,0 +1,16 @@
+void printPatt(int n)
+{
+   int i,j,k;
+    for (i=n;i>0;i--)
+    {
+        for (j=0;j<n-i;j++)
+        {
+            cout<<" ";
+        }
+        for (k=0;k<i;k++)
+        {
+            cout<<"*";
+        }
+        cout<<endl;
+    }
+}

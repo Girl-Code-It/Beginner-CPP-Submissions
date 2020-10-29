@@ -1,0 +1,13 @@
+#include <iostream>
+using namespace std;
+int main() {
+    int x;
+    cin>>x;
+    if(x>1000){
+        cout<<x*90/100<<endl;
+    }
+        else{
+            cout<<x<<endl;
+        }
+    return 0;
+}

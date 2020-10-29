@@ -1,0 +1,22 @@
+#include <iostream>
+using namespace std;
+int main() {
+  int originalnum,num,i,lastdigit,fact=1,sum=0;
+  cin>>originalnum;
+  originalnum=num;
+  while(num!=0){
+      lastdigit=num%10;
+    for(i=1;i<=lastdigit;i++){
+        fact=fact*i;
+    }
+    sum=sum+fact;
+      num=num/10;
+}
+if(sum==originalnum){
+     cout<<"true";
+ }
+ else{
+     cout<<"false";
+ }
+return 0;
+}

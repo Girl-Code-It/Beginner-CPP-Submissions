@@ -1,0 +1,39 @@
+int n;
+cin>>n;
+int cr=1;
+while (cr<=(n/2)+1)
+{
+	int s=1;
+	while (s<=(n/2)+1-cr)
+	{
+		cout<<" ";
+		s++;
+	}
+	int cc=1;	
+	while (cc<=(2*cr)-1)
+	{
+		cout<<"*";
+		cc++;
+	}
+	cout<<endl;
+	cr++;
+}
+cr=1;
+while (cr<=n/2)
+{	
+	int s=1;
+	while (s<=cr)
+	{
+		cout<<" ";
+		s++;
+	}
+	int cc=2*((n/2)-cr+1)-1;
+	while(cc>=1) 	
+	{
+		cout<<"*";
+		cc--;
+	}
+	cout<<endl;
+	cr++;
+	}
+}

@@ -3,9 +3,11 @@ using namespace std;
 int main()
 {
     std::cin.sync_with_stdio(false);
-    int t, n;
-    cin >> t;
-    while (t--)
+
+    int t,n;
+    cin>>t;
+    while(t--)
+
     {
         cin >> n;
         int a[n];
@@ -25,3 +27,4 @@ int main()
         cout << endl;
     }
 }
+

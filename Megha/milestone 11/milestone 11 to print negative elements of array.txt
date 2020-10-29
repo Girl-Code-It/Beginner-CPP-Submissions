@@ -1,0 +1,21 @@
+#include <iostream>
+#define MAX_SIZE 1000
+using namespace std;
+int main() {
+    int arr[MAX_SIZE];
+    int i,N;
+    int sum=0;
+    cin>>N;
+    cout<<"Enter size of array "<<N<<endl;
+    for(i=0;i<N;i++){
+        cin>>arr[i];
+    }
+     for(i=0;i<N;i++){
+       if(arr[i]<0){
+           cout<<arr[i]<<",";
+       }
+       
+    }
+     cout<<sum;
+return 0;
+}

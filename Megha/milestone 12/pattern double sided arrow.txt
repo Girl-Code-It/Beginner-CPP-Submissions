@@ -1,0 +1,28 @@
+#include <iostream>
+using namespace std;
+int main() {
+    int a,i,j,k,p=0,t,q=0;
+    cin>>a;
+    t=a-1;
+    for(i=0;i<a;i++){
+        i<=(a-1)/2?p++:p--;
+        k=p;
+        for(j=0;j<2*a-1;j++){
+            if(j>=t-q&&j<=t-(p-1)){
+                cout<<k<<" ";
+                if(k!=1)
+                k--;
+            }
+            else if(j>=t+(p-1)&&j<=t+q){
+                cout<<k<<" ";
+                if(k<i+2)
+                k++;
+            }
+            else
+            cout<<"  ";
+        }
+        i<(a-1)/2?q+=2:q-=2;
+        cout<<endl;
+    }
+   return 0;
+}

@@ -1,0 +1,44 @@
+#include<bits/stdc++.h>
+using namespace std;
+int main()
+ {
+	 int n;
+	 cin>>n;
+	 map<long,set<long>>m;
+	 
+	 long x,y;
+	 for(int i=0;i<n;i++)
+	   {
+		   cin>>x>>y;
+		   m[x].insert(y);
+	   }
+ 
+auto ans = make_pair(0,0);
+	int max = 0;   
+int l =0;
+ for(auto x1 = m.begin();x1!=m.end();x1++)
+    {
+		auto x2 = x1->first;
+		 for(auto y1 = m[x2].begin();y1!=m[x2].end();y1++ )
+		   {
+				 for(auto y2 = next(y1);y2!=m[x2].end();y2++)
+				    {
+               l = abs(*y1 - *y2);
+					 if(l<max || (l==max && *y1>=ans.second))
+					   continue;
+					 auto x3 = x2 + l;
+					  if(m[x3].count(*y1)&&m[x3].count(*y2))
+						   {
+								 max = l;
+								 ans.first  = x2;
+								 ans.second = *y1;
+							 }
+			      
+				  }
+			 }
+	}
+	if(max)
+	 cout<<ans.first<<" "<<ans.second;
+	else
+	 cout<<"-1";  
+ }

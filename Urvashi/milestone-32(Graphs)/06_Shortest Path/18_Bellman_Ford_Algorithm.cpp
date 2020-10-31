@@ -4,7 +4,7 @@ Bellman Ford Algorithm...
 
 What is Bellman Ford Algorithm?
 => It is also the shortest path algorithm like dijkstra algorithm. It is used to find the shortest path
-from source to destination node including all the vertices using V-1 edges.
+from source to all the other nodes in the graph.
 
 Similarity between dijkstra and bellman ford algorithm is:-
 => They both will not work in case of negative edge weight cycle in the graph.
@@ -48,7 +48,7 @@ void BellmanFord(vector<edge> &Edges)
     // doing relaxing for V-1 times for E edges.
     for (int i = 0; i < V - 1; i++)
     {
-        // firstly all the vertices will have cost as infinity so they will be unupdated.
+        // firstly all the vertices will have distance as infinity so they will be unupdated.
         updated = false;
 
         for (int j = 0; i < E; j++)
@@ -75,15 +75,15 @@ void BellmanFord(vector<edge> &Edges)
                 updated = true;            // as we did the relaxing so make the updated variable as true.
             }
         }
-        // if after 1 iterations of relaxing there was no updation found then just break out of loop
-        // we don't have to do more round of relaxtions they are of no use
+        // if after 1 iteration of relaxing there was no updation found then just break out of loop
+        // we don't have to do more round of relaxations they are of no use.
         if (updated == false)
             break;
     }
 
     // doing relaxation one more time Vth time just for checking the negative edge cycle
-    // as if there is any change found in the Vth relaxation there will be -ve edge cycle but we will ony check
-    // Vth time if there was updation in every V-1 relaxations.
+    // as if there is any change found in the Vth relaxation there will be -ve edge cycle but we will relax
+    // Vth time only if there was updation in every V-1 relaxations.
     for (int j = 0; j < E and updated == true; j++)
     {
         int U = Edges[j].src;

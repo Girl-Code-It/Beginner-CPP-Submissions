@@ -1,43 +1,51 @@
-int IterativeMaxElement(Node* root)
+int IterativeMaxElement(Node *root)
 {
-	if(!root){
-		return 0 ;
+	if (!root)
+	{
+		return 0;
 	}
-	if(root->right){
-		root = root->right ;
+	if (root->right)
+	{
+		root = root->right;
 	}
-	return root->data ;
+	return root->data;
 }
 
-int IterativeMinElement(Node* root)
+int IterativeMinElement(Node *root)
 {
-	if(!root){
-		return 0 ;
+	if (!root)
+	{
+		return 0;
 	}
-	if(root->left){
-		root = root->left ;
+	if (root->left)
+	{
+		root = root->left;
 	}
-	return root->data ;
+	return root->data;
 }
 
-int RecursiveMaxElement(Node* root)
+int RecursiveMaxElement(Node *root)
 {
-	if(!root){
-		return 0 ;
+	if (!root)
+	{
+		return 0;
 	}
-	if(!root->right){
-		return root->data ;
+	if (!root->right)
+	{
+		return root->data;
 	}
-	return RecursiveMaxElement(root->right) ;
+	return RecursiveMaxElement(root->right);
 }
 
-int RecursiveMinElement(Node* root)
+int RecursiveMinElement(Node *root)
 {
-	if(!root){
-		return 0 ;
+	if (!root)
+	{
+		return 0;
 	}
-	if(!root->left){
-		return root->data ;
+	if (!root->left)
+	{
+		return root->data;
 	}
-	return RecursiveMaxElement(root->left) ;
+	return RecursiveMaxElement(root->left);
 }

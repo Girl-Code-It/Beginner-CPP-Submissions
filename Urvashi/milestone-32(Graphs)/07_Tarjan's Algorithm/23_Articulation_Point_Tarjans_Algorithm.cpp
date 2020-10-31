@@ -1,7 +1,7 @@
 /* Articulation Point:- A node is called articulation point if after removing that node and its associated 
 edges, we will get more components than earlier.
 
-Time complexity:- O(V*(V+E))
+Time complexity:- O(V+E)
 
 Two cases of finding articulation pints are:-
 1. If the node is root node and it have more than one child then it is articulation point.

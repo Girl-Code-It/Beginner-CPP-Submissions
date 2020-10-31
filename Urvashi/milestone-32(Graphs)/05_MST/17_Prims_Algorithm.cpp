@@ -7,16 +7,14 @@ What is Prims Algorithm?
 => Prims Algorithm is used to form MST(Minimum Spanning Tree).
 
 What is Minimum Spanning tree?
-=> So, firstly a sapnning tree is the tree which will be formed by joining min edges so that all the vertices will be in the tree
-and after removing one edge from the spanning tree, it should become disjoint tree. Minimum Spanning tree is Spanning tree with min
-cost associated while traversing the tree.
+=> So, firstly a sapnning tree is the tree which will be formed by joining min edges so that all the vertices will be in the tree and after removing one edge from the spanning tree, it should become disjoint . Minimum Spanning tree is Spanning tree with min cost associated while traversing the tree.
 
 If V is the no of vertices in the graph then MST will have V-1 edges. 
 
 We have to follow three steps in Prims Algorithm which are:-
 1. first, we have to find the minimum value node.
-2. Include selecteed node in MST.
-2. We have to compare all the adjacent nodes and the one with smaller value will be inlcuded next(its called relaxation).
+2. Include selected node in MST.
+2. We have to do reelaxation of all the adjacent neighbors of the current node.
 
 Repeat all 3 steps unless all the vertices are included in the MST.
 

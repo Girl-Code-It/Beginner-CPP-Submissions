@@ -1,29 +1,29 @@
-#include<iostream>
-#include<queue>
+#include <iostream>
+#include <queue>
 
 using namespace std;
 
 int main()
 {
-    int n,type,x;
-    queue<int>q;
+    int n, type, x;
+    queue<int> q;
     cin >> n;
 
-    for(int i = 0; i < n; i++)
+    for (int i = 0; i < n; i++)
     {
         cin >> type;
 
-        switch(type)
+        switch (type)
         {
-        case 1 :
+        case 1:
             cin >> x;
             q.push(x);
             break;
-        case 2 :
+        case 2:
             q.pop();
             break;
-        case 3 :
-            cout << q.front()<<"\n";
+        case 3:
+            cout << q.front() << "\n";
         }
     }
     return 0;

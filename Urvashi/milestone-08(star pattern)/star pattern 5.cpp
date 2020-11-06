@@ -1,25 +1,25 @@
-#include<iostream>
+#include <iostream>
 using namespace std;
-int main ()
+int main()
 {
-int i, j, n ;
-cout<<"enter no of rows:";
-cin>>n;
-for(i=1; i<=n ; i++)
-{
-	for(j=1; j<=2*n-1 ; j++)
+	int i, j, n;
+	cout << "enter no of rows:";
+	cin >> n;
+	for (i = 1; i <= n; i++)
 	{
-		if(j>=(n+1)-i && j<=(n-1)+i)
+		for (j = 1; j <= 2 * n - 1; j++)
 		{
-		cout<<"*";	
+			if (j >= (n + 1) - i && j <= (n - 1) + i)
+			{
+				cout << "*";
+			}
+			else
+			{
+				cout << " ";
+			}
 		}
-		else
-		{
-			cout<<" ";
-		}
+		cout << "\n";
 	}
-	cout<<"\n";
-	}	
-	
+
 	return 0;
 }

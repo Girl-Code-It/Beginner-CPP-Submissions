@@ -1,24 +1,22 @@
-#include<iostream>
+#include <iostream>
 using namespace std;
-int main ()
+int main()
 {
-	int i, j ; 
-	for(i=1; i<=5;i++)
+	int i, j;
+	for (i = 1; i <= 5; i++)
 	{
-		for(j=1; j<=5;j++)
+		for (j = 1; j <= 5; j++)
 		{
-			if(j>=6-i)
-			
+			if (j >= 6 - i)
 			{
-		     	cout<<"*";}
-			else 
-			
+				cout << "*";
+			}
+			else
 			{
-					cout<<" ";
-					}
-			
+				cout << " ";
+			}
 		}
-		cout<<"\n";
+		cout << "\n";
 	}
 	return 0;
 }

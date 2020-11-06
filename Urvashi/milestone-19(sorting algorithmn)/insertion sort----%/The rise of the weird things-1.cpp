@@ -1,51 +1,51 @@
-#include<iostream>
+#include <iostream>
 using namespace std;
-void inserton_sort(int *a,int n)
+void inserton_sort(int *a, int n)
 {
-	for(int i=1;i<n;i++)
+	for (int i = 1; i < n; i++)
 	{
-		int hole=i;
-		int value=a[i];
-		while(hole>0&&a[hole-1]>value)
+		int hole = i;
+		int value = a[i];
+		while (hole > 0 && a[hole - 1] > value)
 		{
-			a[hole]=a[hole-1];
+			a[hole] = a[hole - 1];
 			hole--;
 		}
-		a[hole]=value;
+		a[hole] = value;
 	}
 }
 int main()
 {
-	int n,zombies=0,vampires=0,k=0,m=0;
-	cin>>n;
-	int a[n],b[n],c[n];
-	for(int i=0;i<n;i++)
-	cin>>a[i];
-	inserton_sort(a,n);
-	for(int i=0;i<n;i++)
+	int n, zombies = 0, vampires = 0, k = 0, m = 0;
+	cin >> n;
+	int a[n], b[n], c[n];
+	for (int i = 0; i < n; i++)
+		cin >> a[i];
+	inserton_sort(a, n);
+	for (int i = 0; i < n; i++)
 	{
-		if(a[i]%2==0)
-	{
-		zombies+=a[i];
-		b[k]=a[i];
-		k++;
-	}
+		if (a[i] % 2 == 0)
+		{
+			zombies += a[i];
+			b[k] = a[i];
+			k++;
+		}
 		else
 		{
-		vampires+=a[i];
-		c[m]=a[i];
-		m++;
+			vampires += a[i];
+			c[m] = a[i];
+			m++;
+		}
 	}
-	}
-	for(int i=0;i<k;i++)
+	for (int i = 0; i < k; i++)
 	{
-		cout<<b[i]<<" ";
+		cout << b[i] << " ";
 	}
-	cout<<zombies<<" ";
-	
-	for(int i=0;i<m;i++)
+	cout << zombies << " ";
+
+	for (int i = 0; i < m; i++)
 	{
-		cout<<c[i]<<" ";
+		cout << c[i] << " ";
 	}
-	cout<<vampires<<" ";
+	cout << vampires << " ";
 }

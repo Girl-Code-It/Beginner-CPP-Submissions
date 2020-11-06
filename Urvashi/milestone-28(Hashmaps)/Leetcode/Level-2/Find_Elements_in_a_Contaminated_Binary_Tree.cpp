@@ -1,38 +1,40 @@
-class FindElements {
+class FindElements
+{
 public:
-    unordered_map<int,int>m;
-    FindElements(TreeNode* root) 
+    unordered_map<int, int> m;
+    FindElements(TreeNode *root)
     {
-        queue<TreeNode*>q;
-        if(root)
+        queue<TreeNode *> q;
+        if (root)
         {
             root->val = 0;
             q.push(root);
-            m[0]++ ;
-            
-            while(!q.empty())
+            m[0]++;
+
+            while (!q.empty())
             {
-                TreeNode* temp = q.front() ;
+                TreeNode *temp = q.front();
                 q.pop();
                 int x = temp->val;
-                if(temp->left)
+                if (temp->left)
                 {
-                    temp->left->val = 2*x + 1 ;
-                    m[x*2 + 1]++ ;
+                    temp->left->val = 2 * x + 1;
+                    m[x * 2 + 1]++;
                     q.push(temp->left);
                 }
-                
-                if(temp->right)
+
+                if (temp->right)
                 {
-                    temp->right->val = 2*x + 2 ;
-                    m[x*2 + 2]++ ;
+                    temp->right->val = 2 * x + 2;
+                    m[x * 2 + 2]++;
                     q.push(temp->right);
                 }
             }
-        }   
+        }
     }
-    
-    bool find(int target) {
-        return(m.find(target) != m.end()) ;
+
+    bool find(int target)
+    {
+        return (m.find(target) != m.end());
     }
 };

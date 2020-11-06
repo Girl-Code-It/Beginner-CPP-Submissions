@@ -9,7 +9,8 @@ lli dis[100000 + 10];
 queue<int> Q;
 int n;
 
-int main(void) {
+int main(void)
+{
   int i, j, k, kase = 0;
   cin >> n;
 
@@ -24,7 +25,8 @@ int main(void) {
   lli sum = 0;
   int id = 0;
 
-  while (Q.size() < n) {
+  while (Q.size() < n)
+  {
     id = Q.back();
     sum += get(id);
     while (sum < 0 && !Q.empty())
@@ -34,7 +36,6 @@ int main(void) {
     Q.push((id + 1) % n);
   }
   printf("%d\n", Q.front());
-  
 
   return 0;
 }

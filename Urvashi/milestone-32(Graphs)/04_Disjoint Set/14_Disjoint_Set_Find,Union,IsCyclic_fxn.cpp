@@ -14,7 +14,7 @@ using namespace std;
 // vector whose indexes will show the values of the nodes and whose values will show the parent of the current node.
 vector<int> parent;
 
-// find fxn to find the absolute root node or absolute parent of the given node.
+// find fxn to find the root node or absolute parent of the given node.
 int find(int v)
 {
     // if parent of the passed node is -1 means its itself the absolute root, so we will return it.
@@ -44,7 +44,8 @@ bool isCyclic(vector<pair<int, int>> &edge_list)
         int fromP = find(p.first);
         int toP = find(p.second);
 
-        // if absolute parent of both nodes is same that means there is a path between both nodes which mens there is a cycle.
+        // if absolute parent of both nodes is same that means there is a path between both nodes which means we
+        // can't perform union otherwise it will form a cycle.
         if (fromP == toP)
             return true;
 
@@ -67,8 +68,6 @@ int main()
 
     for (int i = 0; i < E; i++)
     {
-        // as we can apply disjoint set union in only undirected graph because union dont take care of 
-        // direction but for the sake of simplicity we are taking vertices as from and to.
         int from, to;
         cin >> from >> to;
         edge_list.push_back({from, to});

@@ -1,25 +1,26 @@
-class Solution {
+class Solution
+{
 public:
     int ans;
-    
-    int pathSum(TreeNode* root, int sum) 
+
+    int pathSum(TreeNode *root, int sum)
     {
-        if(root)
+        if (root)
         {
-            preorder(root,sum);
-            pathSum(root->left,sum);
-            pathSum(root->right,sum);
+            preorder(root, sum);
+            pathSum(root->left, sum);
+            pathSum(root->right, sum);
         }
         return ans;
     }
-    
-    void preorder(TreeNode* root, int sum)
+
+    void preorder(TreeNode *root, int sum)
     {
-        if(!root)
+        if (!root)
             return;
-        if(root->val==sum)
+        if (root->val == sum)
             ans++;
-        preorder(root->left,sum-root->val);
-        preorder(root->right,sum-root->val);
+        preorder(root->left, sum - root->val);
+        preorder(root->right, sum - root->val);
     }
 };

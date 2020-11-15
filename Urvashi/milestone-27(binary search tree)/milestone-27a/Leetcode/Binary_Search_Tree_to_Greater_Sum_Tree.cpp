@@ -1,15 +1,17 @@
-class Solution {
+class Solution
+{
 public:
-   
-    TreeNode* bstToGst(TreeNode* root) {
+    TreeNode *bstToGst(TreeNode *root)
+    {
         int sum = 0;
-        if(!root) return NULL;
-        
-        bstToGst(root->right) ;
+        if (!root)
+            return NULL;
+
+        bstToGst(root->right);
         int temp = root->val;
-        sum += temp ;
-        root->val = sum ;
-        bstToGst(root->left) ;
-        return root ;
+        sum += temp;
+        root->val = sum;
+        bstToGst(root->left);
+        return root;
     }
 };

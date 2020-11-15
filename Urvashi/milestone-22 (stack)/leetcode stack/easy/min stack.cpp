@@ -1,66 +1,71 @@
-class MinStack {
-    private:
+class MinStack
+{
+private:
     int min;
     struct Node
     {
         int data;
-        Node* next;
+        Node *next;
     };
-    
-    struct Node* Head;
-    public:
+
+    struct Node *Head;
+
+public:
     /** initialize your data structure here. */
-    
-    MinStack() {
+
+    MinStack()
+    {
         Head = NULL;
         min = INT_MAX;
     }
-    
-    void push(int x) {
-        
-        struct Node* newNode = new Node(); 
+
+    void push(int x)
+    {
+
+        struct Node *newNode = new Node();
         newNode->data = x;
         newNode->next = Head;
-        Head = newNode; 
-        
-        if(x < min)
-            min = x; 
+        Head = newNode;
+
+        if (x < min)
+            min = x;
     }
-    
-    void pop() {
-        
-        struct Node* temp = Head;
+
+    void pop()
+    {
+
+        struct Node *temp = Head;
         Head = Head->next;
-        
-        if(temp->data == min)
+
+        if (temp->data == min)
         {
-            
-            struct Node*temp1 = Head;
-            int nodemin = INT_MAX; 
-            while(temp1 != NULL)
+
+            struct Node *temp1 = Head;
+            int nodemin = INT_MAX;
+            while (temp1 != NULL)
             {
-                if(temp1->data < nodemin) 
+                if (temp1->data < nodemin)
                     nodemin = temp1->data;
-                temp1 = temp1->next; 
+                temp1 = temp1->next;
             }
-            min = nodemin; 
+            min = nodemin;
         }
-        delete(temp); 
+        delete (temp);
     }
 
-int top() {
-    
-    if(Head == NULL) 
-        return NULL;
-    else 
-        return Head->data; 
-}
+    int top()
+    {
 
-    
-int getMin() {
-    return min;
-}
-    
+        if (Head == NULL)
+            return NULL;
+        else
+            return Head->data;
+    }
+
+    int getMin()
+    {
+        return min;
+    }
 };
 
 /**

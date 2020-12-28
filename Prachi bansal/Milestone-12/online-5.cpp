@@ -1,11 +1,9 @@
 #include<iostream>
 using namespace std;
 int main(){
+	//m:rows n:columns
 	int m,n,p,q,a[10][10],b[10][10];
-	cout<<"Entre the number of rows and columns: ";
 	cin>>m>>n;
-	cout<<"Enter the matrix: ";
-	cout<<endl;
 	for(int i=0;i<m;i++){
 		for(int j=0;j<n;j++){
 			cin>>a[i][j];
@@ -24,7 +22,6 @@ int main(){
 			}
 		}
 	}
-	cout<<"The output is: "<<endl;
 	for(int i=0;i<m;i++){
 		for(int j=0;j<n;j++){
 			cout<<b[i][j]<<" ";

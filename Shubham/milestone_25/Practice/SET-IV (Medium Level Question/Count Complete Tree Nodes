@@ -1,0 +1,14 @@
+class Solution {
+public:
+    int countNodes(TreeNode* root) {
+        
+        if(!root)
+            return 0;
+        
+        int leftSubtreeNodes = countNodes(root->left);
+        int rightSubtreeNodes = countNodes(root->right);
+        
+        return leftSubtreeNodes + rightSubtreeNodes + 1;
+        
+    }
+};

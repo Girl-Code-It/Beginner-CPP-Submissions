@@ -1,0 +1,45 @@
+class Solution {
+public:
+    void levelorderTraversal(Node *root)
+    {
+        if (root == nullptr)
+            return;
+
+        queue<Node *> q;
+
+        q.push(root);
+        q.push(nullptr);
+
+        while (!q.empty())
+        {
+            root = q.front();
+            q.pop();
+            root->next = q.front();
+            if (q.front() == nullptr)
+            {
+                q.pop();
+                if (root->left)
+                    q.push(root->left);
+                if (root->right)
+                    q.push(root->right);
+                if (q.empty() == true)
+                    break;
+
+                q.push(nullptr);
+            }
+            else
+            {
+                if (root->left)
+                    q.push(root->left);
+                if (root->right)
+                    q.push(root->right);
+            }
+        }
+    }
+
+    Node* connect(Node* root) {
+        
+        levelorderTraversal(root);
+        return root;
+    }
+};

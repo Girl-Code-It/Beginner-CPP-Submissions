@@ -1,0 +1,66 @@
+class Solution {
+public:
+    void reverseIt(vector<int>& A)
+    {
+        int low = 0, high = A.size() - 1;
+
+        while(low < high)
+        {
+            int temp = A[low];
+            A[low++] = A[high];
+            A[high--] = temp;
+        }
+    }
+    void makeItZigZag(vector<vector<int>> &A)
+    {
+        for(int i = 1; i < A.size(); i += 2)
+            reverseIt(A[i]);
+    }
+    vector<vector<int>> levelorderTraversal(TreeNode *root)
+    {
+        vector<vector<int>> r;
+        vector<int> t;
+        if (root == nullptr)
+            return r;
+
+        queue<TreeNode *> q;
+
+        q.push(root);
+        q.push(nullptr);
+
+        while (!q.empty())
+        {
+            root = q.front();
+            q.pop();
+            t.push_back(root->val);
+            if (q.front() == nullptr)
+            {
+                q.pop();
+                if (root->left)
+                q.push(root->left);
+                if (root->right)
+                    q.push(root->right);
+                r.push_back(t);
+                t.clear();
+                if (q.empty() == true)
+                    break;
+
+                q.push(nullptr);
+            }
+            else
+            {
+                if (root->left)
+                    q.push(root->left);
+                if (root->right)
+                    q.push(root->right);
+            }
+        }
+        return r;
+    }
+    vector<vector<int>> zigzagLevelOrder(TreeNode* root) {
+        
+        vector<vector<int>> r = levelorderTraversal(root);
+        makeItZigZag(r);
+        return r;
+    }
+};

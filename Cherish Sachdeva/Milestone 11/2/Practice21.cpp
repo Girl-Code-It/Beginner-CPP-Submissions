@@ -1,6 +1,6 @@
 #include<bits/stdc++.h>
 using namespace std;
-int reverse(int a[],int i,int j){
+void reverse(int a[],int i,int j){
 	int li=i;
 	int ri=j;
 	while(li<ri){
@@ -15,6 +15,9 @@ int main(){
 	int a[n];
 	for(int i=0;i<n;i++){
 		cin>>a[i];
+	}
+	if(k<0){
+		k=k+n;
 	}
 	k=k%n;
 	reverse(a,0,n-k-1);

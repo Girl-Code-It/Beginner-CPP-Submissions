@@ -1,0 +1,26 @@
+vector<int> A;
+void inorderTraversal(Node* root)
+{
+    if(root == nullptr)
+        return;
+    inorderTraversal(root->left);
+    A.push_back(root->data);
+    inorderTraversal(root->right);
+    
+}
+int isPairPresent(struct Node *root, int target)
+{
+    A.clear();
+    inorderTraversal(root);
+    int start = 0, end = A.size()-1;
+    while(start < end)
+    {
+        if(A[start] + A[end] == target)
+            return true;
+        else if(target < A[start] + A[end])
+            end--;
+        else 
+            start++;
+    }
+    return false;
+}

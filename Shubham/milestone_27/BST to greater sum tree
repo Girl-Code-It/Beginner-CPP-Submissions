@@ -1,0 +1,17 @@
+class Solution {
+public:
+    int prev = 0;
+    TreeNode* bstToGst(TreeNode* root) {
+        
+        
+        if(root == nullptr)
+            return nullptr;
+        
+        root->right = bstToGst(root->right);
+        root->val += prev;
+        prev = root->val;
+        root->left = bstToGst(root->left);
+        
+        return root;
+    }
+};

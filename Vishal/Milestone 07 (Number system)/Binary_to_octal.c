@@ -1,35 +1,34 @@
 #include<stdio.h>
-#include<math.h>
 
-int main()
-{
-   long binary,temp;
-   int octal=0,r,n=0,reverse;
+int bin_to_oct(int n){
+    int binary_octal[8] = {0, 1, 10, 11, 100, 101, 110, 111};
+    int i = 0;
 
-   printf("Enter the binary input\n");
-   scanf("%d",&binary);
-   temp = binary;
-   while(temp!=0)
-   {    r=temp%1000;
-      while(r!=0)
+    while(binary_octal[i] != n)
+        i++;
+    
+    return i;
+}
+
+int main(){
+
+    long binary;
+
+    printf("Enter a Binary number : ");
+    scanf("%d",&binary);
+
+    int reverse_octal = 0, digit, octal = 0;
+    while (binary)
     {
-       if(r%10==1)
-       octal+=pow(2,n);
-       n++;
-       r/=10;
+        digit = bin_to_oct(binary%1000);
+        reverse_octal = reverse_octal*10 + digit;
+        binary /= 1000;
     }
-        n=0;
-        temp/=1000; 
-        octal*=10;    
-   }
-    octal/=10;
-    while(octal!=0)
-    { 
-       reverse*= 10;
-       reverse+= octal%10;
-       octal/=10;
+    
+    while(reverse_octal){
+        octal = octal*10 + reverse_octal%10;
+        reverse_octal /= 10;
     }
-    printf("binary no is %d\n",binary);
-    printf("octal no is %d\n",reverse);
+    printf("%d", octal);
     return 0;
 }

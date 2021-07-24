@@ -30,7 +30,7 @@ int check_Armstrong(x)
         temp1 /= 10;
     }
     
-    return (sum == x ? 1 : 0);  
+    return (sum == x);  
 }
 
 //Perfect no are those no whose sum of factors is equal to itself.example : 6 = 1+2+3
@@ -44,14 +44,14 @@ int check_Perfect(x)
             sum += i;
     }
     
-   return (sum == x ? 1 : 0);
+   return (sum == x);
 }
 
 //Even no is a no who can be divided by 2.example : 46
 
 int check_Even(x)
 {
-    return (x&1 == 0 ? 1 : 0);
+    return !(x&1);
 }
 
 //Palindrome no is a no whose reverse is equal to itself.example : 12321
@@ -66,7 +66,7 @@ int check_Palindrome(x)
         temp /= 10;
     }
     
-   return (x == reverse ? 1 : 0);
+   return (x == reverse);
 }
 
 //Strong no is a no whose sum of factorial of digits is equal to itself.example : 145=1+4!+5!

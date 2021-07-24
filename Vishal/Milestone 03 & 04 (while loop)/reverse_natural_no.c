@@ -2,15 +2,11 @@
 
 int main ()
 {
-    int n,a,i=1;
+    int n;
     printf("enter the value of n \n");
     scanf("%d",&n);
-    while(i<=n)
-    {
-    a=(n+1)-i;
-    printf("%d\n",a);
-    i++;
-    }
+    while(n)
+        printf("%d ", n--);
     return 0;
 }
     

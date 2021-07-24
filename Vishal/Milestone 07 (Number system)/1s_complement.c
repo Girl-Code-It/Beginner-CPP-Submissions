@@ -4,12 +4,12 @@
 int main()
 {
         int length;
-        char binary[100],ones[100] ;
+        char binary[32],ones[32] ;
  
-        printf("Enter binary no \n ");
+        printf("Enter binary no : ");
         scanf("%s",&binary);
  
-        length = strlen(binary );
+        length = strlen(binary);
         
  
         for(int i=0;i<length;i++)
@@ -23,9 +23,7 @@ int main()
                           ones[i]='0';
                  }
         }
- 
+        ones[length] = '\0';
         printf("\nOne's complement of %s is  %s.",binary,ones); 
         return 0;
 }
-
-    

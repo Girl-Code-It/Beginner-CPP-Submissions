@@ -1,57 +1,41 @@
-#include <stdio.h>
-#include<string.h>
+#include<stdio.h>
 
-void main()
-{
-    int hexConstant[] = {0, 1, 10, 11, 100, 101, 110, 111, 1000, 
-                         1001, 1010, 1011, 1100, 1101, 1110, 1111};
+char bin_to_hex(int n){
+    int binary_hexa[16] = {0, 1, 10, 11, 100, 101, 110, 111,1000,1001,1010,1011,1100,1101,1111};
+    char hexa[16] = {'0', '1', '2', '3', '4', '5','6', '7','8','A','B','C','D','E','F'};
+    int i = 0;
 
-    long long binary, tempBinary;
-    char hex[20];
-    int index, i, digit;
+    while(binary_hexa[i] != n)
+        i++;
     
-    /* Input binary number from user */
-    printf("Enter binary number: ");
-    scanf("%lld", &binary);
-    
-    /* Copy binary number to temp variable */
-    tempBinary = binary;
-    index = 0;
-    
-    /* Find hexadecimal of binary number */
-    while(tempBinary!=0)
+    return hexa[i];
+}
+
+int main(){
+
+    long binary;
+
+    printf("Enter a Binary number : ");
+    scanf("%d",&binary);
+
+    char hexa[32], temp;
+    int len = 0;
+    while (binary)
     {
-        /* Group binary to last four digits */
-        digit = tempBinary % 10000;
-
-        /* Find hexadecimal equivalent of last four digit */
-        for(i=0; i<16; i++)
-        {
-            if(hexConstant[i] == digit)
-            {
-                if(i<10)
-                {
-                    /* 0-9 integer constant */
-                    hex[index] = (char)(i + 48);
-                }
-                else
-                {
-                    /* A-F character constant */
-                    hex[index] = (char)((i-10) + 65);
-                }
-
-                index++;
-                break;
-            }
-        }
-
-        /* Remove the last 4 digits as it is processed */
-        tempBinary /= 10000;
+        hexa[len++] = bin_to_hex(binary%10000);
+        binary /= 10000;
     }
-    hex[index] = '\0';
-    printf("Binary number = %lld\n", binary);  
-    printf("Hexadecimal number = ");
-    for(int i = index-1; i >= 0;i--)
-    printf("%c",hex[i]);
+    hexa[len] = '\0';
 
+    //Reverse string
+    for (int i = 0; i < len/2; i++)
+    {
+        temp = hexa[i];
+        hexa[i] = hexa[len-1-i];
+        hexa[len-1-i] = temp; 
+    }
+    
+
+    printf("%s", hexa);
+    return 0;
 }

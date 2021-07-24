@@ -6,10 +6,8 @@ int main ()
     printf("enter the value of n \n");
     scanf("%d",&n);
     while(i<=n)
-    {
-    printf("%d\n",i);
-    i++;
-    }
+        printf("%d\n",i++);
+
     return 0;
 }
     

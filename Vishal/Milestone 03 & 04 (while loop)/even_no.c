@@ -2,12 +2,8 @@
 
 int main()
 {
-    int a,i=1;
+    int i=1;
     while (i<51)
-    { 
-      a=2*i;
-      printf("%d\n",a);
-      i++;
-    }
+      printf("%d\n",2*(i++));
     return 0;
 }

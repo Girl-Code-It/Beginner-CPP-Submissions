@@ -7,10 +7,9 @@ int main ()
     printf("input a integer \n");
     scanf("%d",&n);
     a=n%10;
-    while(n>=10)
-    {
+    while(n>9)
        n/=10;
-    }
+       
     printf("First digit is %d\n",n);
     printf("Last digit is %d\n",a);
     return 0;

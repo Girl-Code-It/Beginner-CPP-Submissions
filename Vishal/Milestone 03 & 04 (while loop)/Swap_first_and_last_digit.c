@@ -1,22 +1,18 @@
 #include<stdio.h>
 
-int main ()
-{
-    int n,a,sum;
-    printf("input a integer \n");
-    scanf("%d",&n);
-    a=n%10;
-    while(n>=10)
-    {
-       n/=10;
-    }
-    printf("Before swapping\n");
-    printf("First digit is %d\n",n);
-    printf("Last digit is %d\n",a);
-    printf("After swapping\n");
-    printf("First digit is %d\n",a);
-    printf("Last digit is %d\n",n);
+int main(){
+    int n;
+    printf("Enter value of n : ");
+    scanf("%d", &n);
+
+    int first, last, count = 1;
+    last = n%10;
+    first = n;
+
+    while(first > 9)
+        first /= 10, count *= 10;
+
+    // printf("First and last digit of %d is %d and %d respectively.\n", n, first, last, count);
+    printf("New Number after swapping first and last digit is %d", n-(first-last)*count - (last-first));
     return 0;
 }
-    
-    

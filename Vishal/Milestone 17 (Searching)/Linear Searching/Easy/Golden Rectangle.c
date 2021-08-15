@@ -6,12 +6,7 @@ int main()
     for(int i=1; i<=n; i++)
     {
         scanf("%d%d",&a,&b);
-        double r;
-        if(a>b)
-            r=(double)a/b;
-
-        else if(b>a)
-            r=(double)b/a;
+        double r = (a>b) ? (double)a/b : (double)b/a;
             
         if(r>=1.6&&r<=1.7)
             count++;

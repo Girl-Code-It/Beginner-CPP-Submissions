@@ -2,17 +2,15 @@
 
 int main()
 {   
-    int n;
+    int n, flag = 1;
     printf("Enter no of rows : ");
     scanf("%d",&n);
     for(int i=1;i<=n;i++)
     {
         for(int j=1;j<=n;j++)
         { 
-        if((j+i)%2==0)
-        printf("1 ");
-        else
-        printf("0 ");
+            printf("%d ", flag);
+            flag = !flag;
         }
         printf("\n");
     }

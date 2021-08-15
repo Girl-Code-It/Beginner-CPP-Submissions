@@ -1,6 +1,6 @@
 #include<stdio.h>
 
-void input_element(int m,int n,int arr[][n])
+void input_element(int m,int n,int **arr)
 {
     for(int i=0; i<m; i++)
     {
@@ -12,7 +12,7 @@ void input_element(int m,int n,int arr[][n])
     }
 }
 
-void print_matrix(int m,int n,int arr[][n])
+void print_matrix(int m,int n,int **arr)
 {
     printf("\nMatrix :\n");
     for(int i=0; i<m; i++)
@@ -23,7 +23,7 @@ void print_matrix(int m,int n,int arr[][n])
     }
 }
 
-void add_left_diagonal(int m,int n,int arr[][n])
+void add_left_diagonal(int m,int n,int **arr)
 {
     int sum = 0;
     for(int i=0; i<m; i++)
@@ -38,7 +38,7 @@ void add_left_diagonal(int m,int n,int arr[][n])
     printf("Left diagonal sum is : %d\n",sum);
 }
 
-void add_right_diagonal(int m,int n,int arr[][n])
+void add_right_diagonal(int m,int n,int **arr)
 {
     int sum = 0;
     for(int i=0; i<m; i++)

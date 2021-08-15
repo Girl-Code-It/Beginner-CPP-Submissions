@@ -25,4 +25,3 @@ int main()
     printf("The LCM of %d and %d :  %d\n\n", n1, n2, lcmOf);
     return 0;
 }
-
